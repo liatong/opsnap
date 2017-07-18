@@ -1,6 +1,0 @@
----
-- hosts: "{{hosts}}"
-  tasks:
-  - name: show tmp
-    shell: ls -lh {{ProjectPath}}
-...

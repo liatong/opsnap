@@ -1,6 +1,0 @@
----
-- hosts: "{{ hosts }}"
-  tasks:
-  - name: Restart The App
-    shell: supervisorctl restart "{{ appname }}"
-...

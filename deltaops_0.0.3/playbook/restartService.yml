@@ -1,7 +1,0 @@
----
-- hosts: "{{ hosts }}"
-  tasks:
-  - include: stop.yml
-  - include: stare.yml
-
-...

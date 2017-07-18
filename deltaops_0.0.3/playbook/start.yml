@@ -1,4 +1,0 @@
----
-  - name: svc start service 
-    shell:  svc -uc {{serviceDir}}  chdir={{ProjectPath}}/{{ServiceRoot}}
-...

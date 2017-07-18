@@ -1,6 +1,0 @@
----
-  - name: svc stop service monitor 
-    shell:  svc -dk  "{{serviceDir}}"  chdir={{ProjectPath}}/{{ServiceRoot}}
-  - name: kill service 
-    shell: ./{{serviceDir}}/run stop  chdir={{ProjectPath}}/{{ServiceRoot}}
-...
