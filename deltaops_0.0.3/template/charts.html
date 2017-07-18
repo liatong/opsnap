@@ -1,0 +1,677 @@
+
+
+
+{% extends "base.html" %} 
+
+
+{% block page-wrapper %}
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 class="page-header">
+                            主机管理
+                        </h4>
+                    </div>
+                </div>     
+                <div class="row">
+                  <div class="col-lg-12">
+                    
+                   <ul>
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addhost">新增主机</button>
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edithost">编辑主机</button>
+                     <button type="button" class="btn btn-primary" id="rmhost" data-toggle="modal" data-target="#removehostModal">删除主机</button>
+                     <button type="button" class="btn btn-primary" id="rmhost" data-toggle="modal" onclick="connect()" data-target="#loginhostModal11">登录主机</button>
+                     <button type="button" class="btn btn-primary hidden" id="login" data-toggle="modal"  data-target="#loginhostModal"></button>
+                    
+                     <button type="button" class="btn btn-primary" id="hostgroupBtn" data-toggle="modal" data-target="#hostgroupModal">  主机组管理</button>
+                     
+                    <button type="button" class="btn btn-primary hide" id="smanage" data-toggle="modal" data-target="#showactionModal">
+                      Launch demo modal
+                    </button>
+                  
+                   
+                    
+                    </ul>
+                  </div>
+                    
+                </div>
+                <div class="row">
+                    
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                <!-- modal add host-->
+                <div class="modal fade" id="addhost" tabindex="-1" role="dialog" aria-labelledby="toaddhost">
+                  <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="toaddhost">Modal title</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                        <form id= "addhostform" class="form-horizontal">
+                        
+                            <div class="form-group">
+                                <label for="hostname">主机名称:</label>
+                                <input type="text" class="form-control" id="hostname" placeholder="xmserver">
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="ipaddr" class=" control-label">IP地址:</label>
+                                <input type="text" class="form-control" id="ipaddr" placeholder="xmserver">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="htype" class=" control-label">主机类型:</label>
+                                <select id="htype" class="form-control">
+                                  <option value="cloud">云主机</option>
+                                  <option value="managed">托管主机</option>
+                                  <option value="physical">自主机房</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="hposition" class=" control-label">机房位置:</label>
+                                <select id="hposition" class="form-control">
+                                  <option value="shanghai">上海</option>
+                                  <option value="guangzhou">广州</option>
+                                  <option value="xiamen">厦门</option>
+                                  <option value="beijing">北京</option>
+                                  <option value="taiwang">台湾</option>
+                                  <option value="hongkong">香港</option>
+                                  <option value="usa">美国</option>
+                                  <option value="southafrica">南非</option>
+                                  <option value="ireland">爱尔兰</option>
+                                  <option value="frankfurt">法兰克福</option>
+                                </select>
+                            </div>
+                        
+                        </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="savehost" >Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal add host-->
+                
+                 <!-- modal show action host-->
+                <div class="modal fade" id="showactionModal" tabindex="-1" role="dialog" aria-labelledby="showactionModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="showactionModalLabel">Service管理</h4>
+                      </div>
+                      <div class="modal-body">
+                       <input id="clickprojectid" value="0" class="hide" >
+                       
+                       <table class="table  table-hover table-striped">
+                           <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Action Name</th>
+                                <th>Comment</th>
+                                <th>Operation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                       </table>
+                       
+                       <p class="bg-danger runaction hidden"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                       <div class="hidden" id="todisplay">
+                       <button type="button" class="close" ><span aria-hidden="true">&times;</span></button>
+                       <textarea class="form-control hidden" id="actionhistory" rows="15" placeholder="请将测试后的playbook内容粘贴到此处。">
+                       </textarea>
+                       </div>
+                      </div>
+                      
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal show action host-->
+                
+                <!-- modal login to host-->
+                <div class="modal fade" id="loginhostModal" tabindex="-1" role="dialog" aria-labelledby="loginhostModalLabel">
+                  <div class="modal-dialog  modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="loginhostModalLabel"></h4>
+                      </div>
+                      <div  id="term" align="center" class="modal-body">
+                        
+                      </div>
+                      <!--div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="commitremove">Commit</button>
+                      </div-->
+                    </div>
+                  </div>
+                </div>
+                <!-- modal login to host-->
+                
+                <!-- modal remove host-->
+                <div class="modal fade" id="removehostModal" tabindex="-1" role="dialog" aria-labelledby="removehostModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title" id="removehostModalLabel"></h3>
+                      </div>
+                      <div class="modal-body">
+                         <h5>你将删除主机:<kbd ></kbd></h5>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="commitremove">Commit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal remove host-->
+                
+                <!-- modal manage host group -->
+                <div class="modal fade" id="hostgroupModal" tabindex="-1" role="dialog" aria-labelledby="hostgroupModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title" id="hostgroupModalLabel">主机组管理</h3>
+                      </div>
+                      <div class="modal-body">
+                        <div class='row'>
+                        <div class="col-lg-1">
+                        </div>
+                        <div class="col-lg-10">      
+                            <label class="control-lable">主机:</label>
+                            <div class="alert alert-success true">
+                                <p>xmserver</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                        </div>
+
+                        </div>
+                        <div class='row'>
+                            
+                            <div class="col-lg-5">
+                              All Group:
+                              <select id="allgroup" multiple class="form-control">
+                              </select>
+                            </div>
+                            <div class="col-lg-2">
+                                <button id="remove"><<</button>
+                                <button id="add">>></button>
+                            </div>
+                            <div id="havegroup" class="col-lg-5">
+                                Have Group:
+                                <select multiple class="form-control">
+                                </select>
+                            </div>
+                            
+                        </div>    
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="commithg" >Commit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal manage host group-->
+                
+                <p class="bg-danger hidden">Host添加失败！<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                <p class="bg-danger remove hidden" >Host删除失败!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                <p class="bg-danger addhgf hidden" >新增主机组失败!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                <p class="bg-danger addhgs hidden" >新增主机组成功!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                <p class="bg-danger rmhgf hidden" >移除主机组失败!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                <p class="bg-danger rmhgs hidden" >移除主机组成功!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>全选,反选</th>
+                                <th>主机ID</th>
+                                <th>主机名称</th>
+                                <th>主机IP</th>
+                                 <th>主机组</th>
+                                <th>主机类型</th>
+                                <th>主机位置</th>
+                                <th>动作</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody >
+                            
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                <!-- Flot Charts -->
+
+                <!-- row page -->
+               <nav>
+                  <ul class="pager">
+                    <li><button  type="button" class="btn btn-info btn-sm" id="upPage" ><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Up</button></li>
+                    <strong id="pageNum">1</strong>
+                    <li><button type="button" class="btn btn-info btn-sm" id="downPage">Down <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button></li>
+                  </ul>
+              </nav>
+                <!-- row page -->    
+            </div>
+           
+            
+            <!-- /.container-fluid -->
+           
+{% end %}
+    
+{% block script-extend %}
+    <script>
+     
+    // checkbox change css when check or uncheck
+    var checklist = [];
+   var checkip = [];
+   function checkBindFunction(){
+        $('table tbody :checkbox').click(function(){ 
+            if($(this).prop('checked')){
+                console.log($(this).parent().siblings().first().text());
+                console.log($(this).parent().siblings().first().next().next().text());
+                checklist.push($(this).parent().siblings().first().text());
+                checkip.push($(this).parent().siblings().first().next().next().text());
+                $(this).parent().parent().addClass('success')
+            }else{ 
+                checklist.pop(checklist.indexOf($(this).parent().siblings().first().text()));
+                checkip.pop(checklist.indexOf($(this).parent().siblings().first().next().next().text()));
+                $(this).parent().parent().removeClass('success')
+            };
+        })
+        
+        $('button.smanage').click(function(){
+            var clickprojectid = $(this).parent().siblings().first().next().text();
+            $("#smanage").click();
+            $("#clickprojectid").val(clickprojectid);
+            showHostAction();
+        })
+   }
+   
+    //************************ show Host Aciton  **********************//
+        
+    function bindTodoAction(){
+        
+        $("#showactionModal tbody tr button").click(function(){
+        let actionid = $(this).parent().siblings().first().text();
+        let action = $(this).attr('action');
+        //let servername =  $(this).parent().siblings().first().text() ;
+        let hostid = $("#clickprojectid").val();
+        //console.log(action+':'+actionid);
+        console.log(hostid);
+       
+        $("#todisplay .close").click(function(){
+            console.log('ttttt');
+            $("#actionhistory").val('');
+            $("#todisplay").addClass("hidden");
+        })
+        
+        var $btn = $(this).button('loading')
+        $(this).siblings().attr("disabled","disabled");
+        let that = $(this);
+        
+        if ( action == "run"){
+            var url = "actionmanager/run/"+actionid;
+            function runAction(msg){
+                $(".runaction").text(msg);
+                $(".runaction").removeClass('hidden');
+                setTimeout(function(){
+                $(".runaction").addClass('hidden');
+                },8000)
+             };
+            //
+            $.ajax(url,{dataType:'json',type:'POST',data:{action:action,'objecttype':'Host','objectid':hostid}}
+            ).done(function(data){
+                console.log(data);
+                //console.log(data['pid']);
+                $btn.button('reset');
+                $btn.siblings().removeAttr('disabled');
+                runAction(data['result']);
+            }).fail(function(){
+                console.log('fail')
+                $btn.button('reset');
+                $btn.siblings().removeAttr('disabled');
+                runAction(data['result']);
+            })
+            
+        }else if (action == "show"){
+            var url = "actionmanager/history/"+actionid;
+            $.ajax(url,{dataType:'json',type:'GET'}
+            ).done(function(data){
+                console.log(data);
+                $btn.button('reset');
+                $btn.siblings().removeAttr('disabled');
+                $("#todisplay").removeClass("hidden");
+                $("#actionhistory").removeClass("hidden");
+                $("#actionhistory").val('');
+                var comment = '';
+                for (li in  data['data']){
+                    console.log(data['data'][li]);
+                    comment = comment+data['data'][li];
+                }
+                $("#actionhistory").val(comment);
+                
+            }).fail(function(){
+                console.log('fail')
+                $btn.button('reset');
+                $btn.siblings().removeAttr('disabled');
+                runAction(data['result']);
+            })
+            
+        }
+        
+        })
+        
+    }
+    
+    function showHostAction(){
+        // url = http://172.17.92.167:8080/actionmanager/owner/hostgroup/1
+        var url = 'actionmanager/owner/host/'+$('#clickprojectid').val();
+        $.ajax(url,{dataType:'json'}).done(function(data){
+            console.log(data);
+            var Actiondata ={};
+            for (key in data['data']){
+                console.log(data['data'][key]);
+                Actiondata[key]=[];
+                Actiondata[key].push(data['data'][key]['id']);
+                Actiondata[key].push(data['data'][key]['name']);
+                Actiondata[key].push(data['data'][key]['author']);
+            }
+            console.log("asdfad");
+            var tb = $('#showactionModal table  tbody');
+            tb.children().remove();
+            let endtdhtml = '<button type="button" class="btn btn-primary btn-sm action" action="run">执行</button>&nbsp&nbsp<button type="button" class="btn btn-primary btn-sm action" action="show">查看</button>'
+            showDataTable(tb,Actiondata,undefined,endtdhtml,bindTodoAction);
+        }).fail(function(){
+            console.log("fail");
+        })
+
+    }
+    //*****************************  End ****************************//
+   
+    //***************************** Show host table ******************//
+    // Get host data from server api and  call showDataTable()  to display table body.
+    function  getTableData(){
+        let url='/host/get/'+$("#pageNum").text();
+        var jqxhr = $.ajax(url,{ dataType:'json'}
+        
+        ).done(function(data){
+            let stdhtml = '<input type="checkbox">';
+            let endtdhtml = '<button type="button" class="btn btn-link smanage"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></button>';
+            let tb = $('table tbody');
+            showDataTable(tb,data,stdhtml,endtdhtml,checkBindFunction);
+            }
+        ).fail(function(xhr,status){
+            console.log(status)}
+        )
+        //console.log("tobj:"+tobj);
+        return 1;
+    }
+    getTableData();
+    //************************** End **************************//
+    
+    
+    //********************* Add Host:Post the form data to server *********//
+    function showGroupSelect(){
+        $.ajax( 'group/all',{dataType:'json'}
+        ).done(
+            function(data){
+                var tdata = data['data'];
+                for (id in tdata){
+                    console.log(tdata[id][1]);
+                    var op = document.createElement('option');
+                    op.innerText=tdata[id][1];
+                    $("#allgroup").append(op);
+                }
+            }
+        ).fail();
+   }
+   
+   function showHostGroupSelect(){
+        var id = $("input:checkbox:checked").parents().first().next().text();
+        url='host/group/'+id;
+        $.ajax(url,{dataType:'json'}
+        ).done(function(data){
+                data.map(function(x){
+                    var op = document.createElement('option');
+                    op.innerText=x;
+                    $("#havegroup select").append(op);
+                })
+            }
+        ).fail()
+   }
+     
+    // Clear Form value
+     function clearFormValue(){
+        $("#addhostform :input").each(function(){
+            this.value = '';     
+        });
+     }
+     
+    //Post data to server api
+     function postData(data={}){
+        let url='host/post';
+        function failfun(){
+               $(".bg-danger").removeClass('hidden');
+               setTimeout(function(){
+               $(".remove").addClass('hidden');
+               },5000)
+         };
+       
+        var jqxhr1 = $.ajax('host/post',{
+                type:'POST',
+                dataType:'json',
+                data:data,
+                }
+        ).done(
+            function(data){
+              if(data['status'] == 'success'){
+                  console.log(data['status']);
+                  clearFormValue();
+                  getTableData();
+              }else{
+                   failfun();
+              } 
+            }
+        ).fail(function(){
+            failfun();}
+        )
+     }
+     
+     // Events with  button of save host.
+     $("#savehost").on('click',function(){
+        var savedata = {};
+        namere=/^([0-9a-zA-Z]+\-?)+$/;
+        ipre=/^((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.){3}(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])$/;
+        
+        $("#addhostform :input").each(function(){
+            //console.log(this.id,this.value);
+            savedata[this.id]=this.value;
+            
+        });
+        
+        if ( ! namere.test(savedata['hostname'] )){
+            alert("主机名称只能由：字母，数组，-,符号构成！");
+            return -1;
+        } else if( ! ipre.test(savedata['ipaddr'])){
+            alert("请输入正确的IP地址！");
+            return -1;
+        } else{
+            var $btn = $(this).button('loading');
+            //console.log(savedata);
+            postData(savedata);
+            $btn.button('reset');
+            $('#addhost button.close').click();
+        }
+        
+     });
+    
+    // Get checked checkbox value ,return a arrray
+    function getCheckArray(){
+        var selectAll = $('table tbody :checkbox:checked');
+        var arr = [];
+        selectAll.each(function(){ arr.push( $(this).parent().next().text())    }) ;
+        return arr;
+    }
+    
+    //*********************    END ***************************//
+    function deleteData(data,s,f){
+       let url = 'host/del';
+       var jqxhr1 = $.ajax(url,{type:'DELETE',dataType:'json',data:{'hostid':data}}
+       ).done(function(data){ ( data['status'] == 'fail' ) ? f():s();}
+       ).fail(function(){f();})
+    }
+    function showHostList(){
+        $("#hostgroupModal .true").children().remove();
+        $("#hostgroupModal .true").append('<p>'+$("input:checkbox:checked").parent().siblings().first().next().text()+'</p>');
+    }
+    $('#rmhost').on('click',function(){
+        $('#removehostModal .modal-body h5 kbd').text(getCheckArray());        
+    })
+    
+    $('#commitremove').on('click',function(){
+        function s(data){
+            $('table tbody :checkbox:checked').parent().parent().remove();
+            //alert("删除成功！");
+        };
+        function f(){
+            $(".remove").removeClass('hidden');
+            setTimeout(function(){
+               $(".remove").addClass('hidden');
+               },5000)
+        }
+        deleteData(data=JSON.stringify(getCheckArray()),s,f);
+        $('#removehostModal button.close').click();
+    })
+    
+    
+    $("#hostgroupBtn").click(function(){
+        //if($("input:checkbox").prop('checked')){
+            $("#allgroup").children().remove();
+            $("#havegroup select").children().remove();
+            showGroupSelect();
+            showHostGroupSelect();
+            showHostList();
+            /*
+        }else{
+            console.log('no');
+            $("#hostgroupModal .close").click();
+        }
+        */
+    })
+    
+    
+    // *************************** Update the Host Group ****************************//
+    var addlist=[];
+    var rmlist=[];
+    
+    $("#add").click(function(){
+    
+        var add = $("#allgroup option:selected");
+        console.log(add);
+        add.map(function(x){
+            var op=add[x];
+            console.log(rmlist.indexOf(op.text));
+            if( rmlist.indexOf(op.text) >= 0){
+                rmlist.pop(rmlist.indexOf(op.text));
+            }else if(addlist.indexOf(op.text) < 0){
+                addlist.push(op.text);
+            }
+        });
+        $("#havegroup select").append(add);
+    })
+    
+    $("#remove").click(function(){
+        var rm = $("#havegroup select option:selected");
+        rm.map(function(x){
+            var op=rm[x];
+            if( addlist.indexOf(op.text) >= 0 ){
+                addlist.pop(addlist.indexOf(op.text));                
+            }else if( rmlist.indexOf(op.text) < 0 ){
+                rmlist.push(op.text);
+            }
+        });
+        $("#allgroup").append(rm);
+        
+    })
+    $("#commithg").click(function(){
+         function failfun(){
+            $(".addhgf").removeClass('hidden');
+            setTimeout(function(){
+            $(".addhgf").addClass('hidden');
+            },5000)
+         };
+         function addfun(){
+            $(".addhgs").removeClass('hidden');
+            setTimeout(function(){
+            $(".addhgs").addClass('hidden');
+            },5000)
+         };
+         function rmfailfun(){
+            $(".rmhgf").removeClass('hidden');
+            setTimeout(function(){
+            $(".rmhgf").addClass('hidden');
+            },5000)
+         };
+         function rmfun(){
+            $(".rmhgs").removeClass('hidden');
+            setTimeout(function(){
+            $(".rmhgs").addClass('hidden');
+            },5000)
+         };
+        var url = "host/group/"+checklist[0];
+        console.log(url);
+        if (addlist.length > 0){
+            $.ajax(url,{dataType:'json',type:'POST',data:{'list':JSON.stringify(addlist)}}).done(function(data){
+                    if(data['status'] != 'success'){ failfun()}
+                    else{addfun();}
+                }).fail(function(){
+                    failfun();
+                })
+        };
+        if( rmlist.length >0 ){
+            $.ajax(url,{dataType:'json',type:'DELETE',data:{'list':JSON.stringify(rmlist)}}).done(function(data){
+                if(data['status'] != 'success'){ rmfailfun()}
+                else{rmfun();}
+            }).fail(function(){
+                rmfailfun();
+            })
+        };
+       $("#hostgroupModal .close").click();
+       getTableData();
+    })
+    
+    
+    // ************************** End **********************************************//
+    
+    //*************************** TO Login Server **********************************//
+    
+    //*************************** End **********************************************//
+    </script>
+    <script src="static/js/term.js"></script>
+    <script src="static/js/ws.js"></script>
+    <script src="static/js/formvalid.js"></script>
+    <script src="static/js/main.js"></script>
+    
+
+{% end %}

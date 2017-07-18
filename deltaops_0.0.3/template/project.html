@@ -1,0 +1,487 @@
+
+{% extends "base.html" %}
+
+   
+       {% block page-wrapper %}
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 class="page-header">
+                            项目管理
+                        </h4>
+                    </div>
+                </div>     
+                <div class="row">
+                    <ul>
+                     <button type="button" class="btn btn-primary" id="addproject" data-toggle="modal" data-target="#addprojectModal">新增项目</button>
+                     <button type="button" class="btn btn-primary" id="rmproject" data-toggle="modal" data-target="#removeprojectModal">删除项目</button>
+                     <button type="button" class="btn btn-primary">查看项目</button>
+                     <button type="button" class="btn btn-primary" id="initproject">初始化项目</button>
+                     <button type="button" class="btn btn-primary hide" id="smanage" data-toggle="modal" data-target="#smanageModel">
+                      Launch demo modal
+                    </button>
+                    </ul>
+                    
+                </div>
+                
+                <!-- /.row -->
+                <div class="row">
+                <!-- modal add project-->
+                <div class="modal fade" id="addprojectModal" tabindex="-1" role="dialog" aria-labelledby="toaddproject">
+                  <div class="modal-dialog " role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="toaddproject">Project Managed</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                        <p class="bg-danger errorinfo hidden "> asdfasdf</p>
+                        <form id= "addhostform" class="form-horizontal">
+                        
+                            <div class="form-group">
+                                <label for="projectname">项目名称</label>
+                                <input type="text" class="form-control" id="projectname" placeholder="xmserve-m4-product">
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="projectpath" class=" control-label">项目路径</label>
+                                <input type="text" class="form-control" id="projectpath" placeholder="/data/M4Product">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="conhost" class=" control-label">关联主机</label>
+                                <select id="conhost" class="form-control">
+                                  <option value="cloud">xmserver</option>
+                                  <option value="managed">huadong</option>
+                                </select>
+                            </div>
+                          <div class="form-group">
+                                <label for="contype" class=" control-label">关联类型</label>
+                                <select id="contype"   class="form-control">
+                                  <option value="vidagrid">VidaGrid</option>
+                                  <option value="asi">ASI</option>
+                                </select>
+                            </div>
+                          <div class="form-group">
+                                <label for="conconfig" class=" control-label">关联配置模板</label>
+                                <select id="conconfig"   class="form-control">
+                                  <option value="vidagrid">M4-Product-No-HK</option>
+                                  <option value="asi">M4-Product-HK</option>
+                                  <option value="asi">ASI-asiserver</option>
+                                  <option value="asi">M4-Product-HK</option>
+                                </select>
+                          </div>
+                          
+                          <div class="checkbox">
+                            <label>
+                              <input id="needinit"type="checkbox" value="true"> 立即初始化
+                            </label>
+                          </div>
+                          
+                            
+                        </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveproject" >Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- end modal add project-->
+                
+                <!-- modal remove project-->
+                <div class="modal fade" id="removeprojectModal" tabindex="-1" role="dialog" aria-labelledby="removeprojectModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title" id="removeprojectModalLabel">删除项目</h3>
+                      </div>
+                      <div class="modal-body">
+                         <h5>你将删除项目:<kbd ></kbd></h5>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="commitremove">Commit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+       
+                <!-- end modal remove project-->
+                
+                <!-- modal manage server-->
+                <div class="modal fade" id="smanageModel" tabindex="-1" role="dialog" aria-labelledby="smanageLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="smanageLabel">Service管理</h4>
+                      </div>
+                      <div class="modal-body">
+                       <input id="clickprojectid" value="0" class="hide" >
+                       
+                       <table class="table  table-hover table-striped">
+                           <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Service Name</th>
+                                <th>Service Status</th>
+                                <th>Proccess ID</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="active ">
+                                <td>1265</td>
+                                <td>1265</td>
+                                <td>uninit</td>
+                                <td>1265</td>
+                                <td>
+                                    <button type="button" action="start" class="btn btn-primary btn-sm action " disabled="disabled">启动</button>
+                                    <button type="button" action="stop" class="btn btn-primary btn-sm action">停止</button>
+                                    <button type="button" action="restart" class="btn btn-primary btn-sm action">重启</button>
+                                    <button type="button" action="show" class="btn btn-primary btn-sm disabled action">查看</button>
+                                </td>
+                             </tr>
+                        </tbody>
+                       </table>
+                       
+                       
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end  modal manage server-->
+                
+                <!-- project table -->
+                 <p class="bg-danger addpjs hidden" >新增项目成功!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                 <p class="bg-danger initpjs hidden" >初始化项目成功!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                 <p class="bg-danger initpj hidden" >正在初始项目中...<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                 <p class="bg-danger addpjf hidden" >新增项目失败!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                 <p class="bg-danger initpjf hidden" >初始化项目失败!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                 
+                <table  id="showproject" class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>全选</th>
+                            <th>项目ID</th>
+                            <th>项目名称</th>
+                            <th>项目路径</th>
+                             <th>项目类型</th>
+                            <th>关联主机</th>
+                            <th>关联配置模板</th>
+                            <th>项目状态</th>
+                            <th>Service管理</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                
+                      
+                    </tbody>
+                </table>
+ 
+                <!-- end  project table -->
+                <!-- row page -->
+                <nav>
+                  <ul class="pager">
+                    <li><button  type="button" class="btn btn-info btn-sm" id="upPage" ><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Up</button></li>
+                    <strong id="pageNum">1</strong>
+                    <li><button type="button" class="btn btn-info btn-sm" id="downPage">Down <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button></li>
+                  </ul>
+                </nav>
+              
+                <!-- row page -->   
+                </div>
+               
+                <!-- Flot Charts -->
+
+                 
+            </div>
+            <!-- /.container-fluid -->
+           
+    {% end %}
+    {% block script-extend %}
+    <script>
+    
+    //===== Display select option of host and config tmp ====//
+    function showAllHost(){
+        var url = 'host/all';
+        $.ajax(url,{dataType:'json'}).done(function(data){
+            console.log(data);
+            $("#conhost").children().remove();
+            $.each(data,function(k){
+                $("#conhost").append('<option value="'+data[k][0]+'">'+data[k][1]+'</option>');
+            })
+        }).fail(function(){
+            console.log('fail');
+        })
+    }
+    function showAllConftmp(){
+        var url = 'conftmp/all';
+        $.ajax(url,{dataType:'json'}).done(function(data){
+            console.log(data);
+            $("#conconfig").children().remove();
+            $.each(data,function(k){
+                $("#conconfig").append('<option value="'+data[k][0]+'">'+data[k][1]+'</option>');
+            })
+        }).fail(function(){
+            console.log('fail');
+        })
+    }
+    
+    $("#addproject").click(function(){
+        showAllHost();
+        showAllConftmp();
+    })
+    
+    ///============
+   var checklist = []
+   function checkBindFunction(){
+        $('table tbody :checkbox').click(function(){ 
+            if($(this).prop('checked')){
+                checklist.push($(this).parent().siblings().first().text());
+                $(this).parent().parent().addClass('success')
+            }else{ 
+                checklist.pop(checklist.indexOf($(this).parent().siblings().first().text()));
+                $(this).parent().parent().removeClass('success')
+            };
+        })
+        
+        $('button.smanage').click(function(){
+            var clickprojectid = $(this).parent().siblings().first().next().text();
+            $("#smanage").click();
+            $("#clickprojectid").val(clickprojectid);
+            showServerManageTable();
+        })
+   }
+    
+    function showProjectTable(){
+        var url='project/';
+        var page = $("#pageNum").text();
+        $.ajax(url,{dataType:'json',data:{'page':page}}).done(function(data){
+            let endtdhtml = '<button type="button" class="btn btn-link smanage"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></button>';
+            let stdhtml = '<input type="checkbox">';
+            let tb = $('#showproject tbody');
+            showDataTable(tb,data,stdhtml,endtdhtml,checkBindFunction);
+        }).fail(function(){
+            console.log('fail');
+        })
+    }
+    showProjectTable();
+    
+    //==== Addd  project ===//
+    function saveProjectForm(){
+        var rt = 1;
+        var namere=/^([0-9a-zA-Z]+\-?)+$/;
+        var pathre=/^(.*)+$/;
+        var projectdata = {};
+        $('#addprojectModal form :input').each(function(){
+            (this.type == 'checkbox') ? projectdata[this.id]=$(this).prop('checked') : projectdata[this.id]=this.value;
+        });
+        console.log(projectdata);
+        if  ( namere.test(projectdata['projectname']) ){}
+        else{
+            $(".errorinfo").text("模板名称不能出现特殊字符，以数字字母组成.");
+            $(".errorinfo").removeClass('hidden');
+            setTimeout(function(){
+            $(".errorinfo").addClass('hidden');
+            },5000)
+            rt = 0;
+        }
+        console.log(projectdata['projectpath']);
+        if ( pathre.test(projectdata['projectpath']) ){}
+        else{
+            $(".errorinfo").text("路径不包含特殊字符，以/开头，不能以/结束。");
+            $(".errorinfo").removeClass('hidden');
+            setTimeout(function(){
+            $(".errorinfo").addClass('hidden');
+            },5000);
+            rt = 0;
+        }
+        return ( rt) ? projectdata:0;
+    }
+    
+    function clearProjectForm(){
+        $('#addprojectModal form :input').each(function(){
+            (this.type == 'checkbox') ? $(this).prop('checked',false): this.value='';
+        });
+        return 1;
+    }
+    
+    $('#saveproject').click(function(){
+        if(saveProjectForm()){
+            data = saveProjectForm();
+            var url = 'project/';
+            function addpjs(){
+                $(".addpjs").removeClass('hidden');
+                setTimeout(function(){
+                $(".addpjs").addClass('hidden');
+                },5000)
+            }
+            function addpjf(){
+                $(".addpjf").removeClass('hidden');
+                setTimeout(function(){
+                $(".addpjf").addClass('hidden');
+                },5000)
+            }
+            $.ajax(url,{dataType:'json',type:'POST',data:data}).done(function(data){
+                if(data['status']=='success'){ clearProjectForm();addpjs();}
+                else{addpjf();}
+            }).fail(function(){
+                addpjf();
+            })
+            $('#addprojectModal button.close').click();
+        };
+        
+    })
+    
+    //======delete project //
+    function getCheckArray(){
+        var selectAll = $('table tbody :checkbox:checked');
+        var arr = [];
+        selectAll.each(function(){ arr.push( $(this).parent().next().next().text())    }) ;
+        console.log(arr);
+        return arr;
+    }
+    
+    $('#rmproject').on('click',function(){
+        $('#removeprojectModal .modal-body h5 kbd').text(getCheckArray());        
+    })
+    
+    $('#commitremove').on('click',function(){
+        let data = checklist;
+        let url = 'project/';
+        
+        function rmpjs(){
+            $(".rmpjs").removeClass('hidden');
+            setTimeout(function(){
+            $(".rmpjs").addClass('hidden');
+            },5000)
+        }
+        function rmpjf(){
+            $(".rmpjf").removeClass('hidden');
+            setTimeout(function(){
+            $(".rmpjf").addClass('hidden');
+            },5000)
+        }
+        $.ajax(url,{dataType:'json',data:{'rmlist':JSON.stringify(data)},type:'DELETE'}).done(function(data){
+            if( data['status'] == 'fail' ){rmpjf();}
+            else{rmpjs();}
+        }).fail(function(){
+            rmpjf();
+        })
+        $("#removeprojectModal .close").click();
+    })
+    
+    //=========other
+    function bindServerAction(){
+        $("#smanageModel tbody tr button").click(function(){
+        //console.log( $(this).attr('action'),$(this).parent().siblings().first().next().text() ) ;
+        let action = $(this).attr('action');
+        let servername =  $(this).parent().siblings().first().text() ;
+        let pid = $("#clickprojectid").val();
+        console.log(action+servername+pid);
+        var $btn = $(this).button('loading')
+        $(this).siblings().attr("disabled","disabled");
+        let that = $(this);
+        console.log("asdf");
+        //action(servername);
+        $.ajax('servicemange',{dataType:'json',type:'POST',data:{'pid':pid,'sid':servername,'action':action}}
+        
+        ).done(function(data){
+            console.log(data);
+            console.log(data['pid']);
+            $btn.button('reset');
+            $btn.siblings().removeAttr('disabled');
+            $(that).parent().siblings().first().next().next().next().text(data['pid']);
+            
+        }).fail(function(){
+            console.log('fail')
+        })
+        //$(this).siblings().removeAttr('disabled');
+        /*
+        if(sendData(servername)){
+             $btn.button('reset');
+             $(this).siblings().removeAttr('disabled');
+        }else{
+            console.log(action+'fail');
+        }
+        */
+        
+        })
+    }
+    
+    function showServerManageTable(){
+        var url = 'project/service/'+$('#clickprojectid').val();
+        $.ajax(url,{dataType:'json'}).done(function(data){
+            console.log(data);
+            var tb = $('#smanageModel table  tbody');
+            tb.children().remove();
+            let endtdhtml = '<button type="button" class="btn btn-primary btn-sm action" action="start">启动</button>&nbsp<button type="button" class="btn btn-primary btn-sm action" action="stop">停止</button>&nbsp<button type="button" class="btn btn-primary btn-sm action " action="restart">重启</button>&nbsp<button type="button" class="btn btn-primary btn-sm action" action="show">查看</button>'
+            showDataTable(tb,data,undefined,endtdhtml,bindServerAction);
+        }).fail(function(){
+            console.log("fail");
+        })
+
+    }
+    
+   //===== init project  
+    function initProject(){
+         
+         var pid;
+         var  url = 'project/init/';
+         pid = checklist[0];
+         function rmpjs(){
+             $(".initpjs").removeClass('hidden');
+             setTimeout(function(){
+             $(".initpjs").addClass('hidden');
+             },5000)
+         }
+         function rmpjf(){
+             $(".initpjf").removeClass('hidden');
+             setTimeout(function(){
+             $(".initpjf").addClass('hidden');
+             },5000)
+         }
+         $(".initpj").removeClass('hidden');
+         $.ajax(url,{dataType:'json',data:{'pid':pid},type:'POST'}).done(function(data){
+            $(".initpj").addClass('hidden');
+            if( data['status'] == 'fail' ){rmpjf();}
+             else{rmpjs();}
+         }).fail(function(){
+            $(".initpj").addClass('hidden');
+            rmpjf();
+         })
+         
+         
+    }
+    
+    $("#initproject").on('click',function(){
+        if (checklist.length > 1){
+            alert("每次只初始化一个项目！");
+        }else{
+            initProject();
+        }
+        
+    })
+    
+    
+   
+   
+    var clickobj = {}
+    var clickid;
+    
+    </script>
+    {% end %}
+</body>
+
+</html>

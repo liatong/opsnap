@@ -1,0 +1,397 @@
+{% extends "base.html" %}
+
+{% block page-wrapper %}
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 class="page-header">
+                            参数模板管理
+                        </h4>
+                    </div>
+                </div>     
+                <div class="row">
+                    <ul>
+                     <button type="button" id="toadd" class="btn btn-primary" data-toggle="modal" data-target="#addconftmp">新增模板</button>
+                     <button type="button" class="btn btn-primary" id="rmconftmp" data-toggle="modal" data-target="#removeconftmpModal">删除模板</button>
+                     <button type="button" class="btn btn-primary" id="edditconftmp" data-toggle="modal" data-target="#addconftmp">编辑模板</button>
+                    </ul>
+                    
+                </div>
+                
+                <!-- /.row -->
+                <div class="row">
+                <!-- modal add conftmp-->
+                <div class="modal fade" id="addconftmp" tabindex="-1" role="dialog" aria-labelledby="toaddconftmp">
+                  <div class="modal-dialog  role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="toaddconftmp">Config Template</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                        <p class="bg-danger kvnotnull hidden" >Key或Value,模板名称不能为空！</p>
+                        <p class="bg-danger namenotnull hidden" >模板名称不能为空！</p>
+                        <form id= "addconftmpform" class="form-inline addconftmpform">
+                            <div class="form-group">
+                                <label for="templatename">模板名称:</label>
+                                <input type="text" class="form-control" id="templatename" placeholder="xmserver">
+                            </div><p></p>
+                            
+                            <div id="kvtmp" class="row hide">
+                            
+                                    <div class="form-group">
+                                      
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Key</span>
+                                            <input type="text" class="form-control" id="key" placeholder="RedisIP">
+                                        </div>
+                                    </div>&nbsp&nbsp
+                                   
+                                
+                                    <div class="form-group">
+                                       
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Value</span>
+                                            <input type="text" class="form-control" id="value" placeholder="192.168.1.1">
+                                        </div>    
+                                    </div>&nbsp&nbsp
+                              
+                                    <button type="button" class="btn btn-link btn-sm  removeKey">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    </button>
+                                   
+                                
+                            </div> 
+                            
+                        </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button  id="addKeyInput" type="button" class="btn btn-link addKeyInput  ">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增KEY
+                        </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="copytmp" >Clone</button>
+                        <button type="button" class="btn btn-primary " id="saveConfTmp" >Save changes</button>
+                        <button type="button" class="btn btn-primary " id="updatatmp" >Update</button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- end modal add conftmp-->
+                
+               
+                <!-- modal remove project-->
+                <div class="modal fade" id="removeconftmpModal" tabindex="-1" role="dialog" aria-labelledby="removeconftmpModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title" id="removeconftmpModalLabel">删除参数模板</h3>
+                      </div>
+                      <div class="modal-body">
+                         <h5>你将删除参数模板:<kbd ></kbd></h5>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="commitremove">Commit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+       
+                <!-- end modal remove project-->
+                
+                <!-- project table -->
+                <p class="bg-danger addtps hidden" >新增模板成功!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                <p class="bg-danger addtpf hidden" >新增模板失败!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                <p class="bg-danger rmtmps hidden" >删除模板成功!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                <p class="bg-danger rmtmpf hidden" >删除模板失败!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                <p class="bg-danger uptmps hidden" >更新模板成功!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                <p class="bg-danger uptmpf hidden" >更新模板失败!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                
+                <table  id="showconftmp" class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>全选</th>
+                            <th>模板ID</th>
+                            <th>模板名称</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                                
+                      
+                    </tbody>
+                </table>
+ 
+                <!-- end  project table -->
+                <!-- row page -->
+                <nav>
+                  <ul class="pager">
+                    <li><button  type="button" class="btn btn-info btn-sm" id="upPage" ><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Up</button></li>
+                    <strong id="pageNum">1</strong>
+                    <li><button type="button" class="btn btn-info btn-sm" id="downPage">Down <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button></li>
+                  </ul>
+                </nav>
+                <!-- row page -->   
+                </div>
+               
+                <!-- Flot Charts -->
+
+                 
+            
+            <!-- /.container-fluid -->
+  {% end %}
+  {% block script-extend %}
+    <script>
+    //==== Bind checkbox === 
+    var checklist = []
+   function checkBindFunction(){
+        $('table tbody :checkbox').click(function(){ 
+            if($(this).prop('checked')){
+                checklist.push($(this).parent().siblings().first().text());
+                $(this).parent().parent().addClass('success')
+            }else{ 
+                checklist.pop(checklist.indexOf($(this).parent().siblings().first().text()));
+                $(this).parent().parent().removeClass('success')
+            };
+        })
+   }
+    //=======Show table===
+    // Get ConfigTemplate data and show to table
+    function getTableData(){
+        var url = 'conftmp/';
+        page = $("#pageNum").text();
+        $.ajax(url,{dataType:'json',data:{'page':page}}).done(function(data){
+            //console.log(data);
+            let stdhtml = '<input type="checkbox">';
+            let tb = $('#showconftmp tbody');
+            showDataTable(tb,data,stdhtml,undefined,checkBindFunction);
+        }).fail(function(){
+            console.log('get project list fail!!')
+        })
+        
+    }
+    getTableData();
+    
+    
+    //======= bind Add Key & rm key  event ===
+    //bind evet remove key value input
+    function bindrmkey(){
+        $("button.removeKey").click(function(){ $(this).parent().remove()})
+    }
+    bindrmkey();
+    
+    //bind add key value input
+    $(".addKeyInput").click(function(){
+        
+        var inputhtml = $("#kvtmp");
+        console.log(inputhtml);
+        inputhtml.find("#key").attr('value','');
+        inputhtml.find("#value").attr('value','');
+        $(".addconftmpform").append('<div class="row keyValueInput">' + inputhtml.html()+'</div>');
+        bindrmkey();
+    })
+    
+    //======= Add ConfigTemplate =====
+    // Get add project form value//
+    function saveConfTmpForm(){
+        data = {}
+        var tmpdata = [];
+        var  rt = 1;
+        $("div.keyValueInput").not(".hide").each(function(){
+            let keyname,keyvalue;
+            //vre = /^[0-9a-zA-Z]+/;
+            vre = /\w+/;
+            $(this).find('input').each(function(){
+                //console.log($(this).val());
+                if( vre.test($(this).val()) ){
+                    ( $(this).attr('id') == 'key' ) ? keyname = $(this).val() : keyvalue = $(this).val();
+                }else{
+                    console.log($(this).val());
+                    $(".kvnotnull").removeClass('hidden');
+                    setTimeout(function(){
+                    $(".kvnotnull").addClass('hidden');
+                    },5000)
+                    rt = 0;
+                }
+            });
+            tmpdata.push([keyname,keyvalue])
+            //console.log("+++");
+        })
+        console.log(rt);
+        if($("#templatename").val()){
+            data['name']=$("#templatename").val();
+        }else{
+             $(".namenotnull").removeClass('hidden');
+                    setTimeout(function(){
+                    $(".namenotnull").addClass('hidden');
+                    },5000)
+            rt=0;
+        }
+        data['value']=tmpdata;
+        return ( rt) ? data: 0;
+    }
+
+    function clearConfTmpForm(){
+         $("#addconftmpform div.keyValueInput").not(".hide").each(function(){
+            $(this).remove();
+         })
+          $("#templatename").val('');
+          $(".modal-footer button").removeClass("hidden");
+        return 1;
+    }
+
+    $('#saveConfTmp').click(function(){
+        //saveConfTmpForm();
+        if(saveConfTmpForm()){
+            data = saveConfTmpForm();
+            var url = 'conftmp/';
+            function addtpf(){
+                $(".addtpf").removeClass('hidden');
+                setTimeout(function(){
+                $(".addtpf").addClass('hidden');
+                },5000)
+            }
+            function addtps(){
+                $(".addtps").removeClass('hidden');
+                setTimeout(function(){
+                $(".addtps").addClass('hidden');
+                },5000)
+            }
+            $.ajax(url,{dataType:'json',type:'POST',data:{'name':data['name'],'value':JSON.stringify(data['value'])}}).done(function(data){
+                if(data['status'] == 'success'){ getTableData(); addtps();}
+                else{ addtpf();}
+            }).fail(function(){
+                addtpf();
+            })
+            clearConfTmpForm();
+            $('#addconftmp button.close').click();
+            // add data to table;
+        }else{
+            //alert("请重新输入！");
+            return -1;
+        };
+        
+    })
+    
+    $("#toadd").click(function(){
+        clearConfTmpForm();
+        $("#toaddconftmp").text('Add Template:');
+        $("#templatename").parent().removeClass('hidden');
+        $("#copytmp").addClass("hidden");
+        $("#updatatmp").addClass('hidden');
+        $("#saveConfTmp").removeClass('hidden');
+    })
+    
+    //====== Rm ConfigTemplate======
+    function getCheckArray(){
+        var selectAll = $('table tbody :checkbox:checked');
+        var arr = [];
+        selectAll.each(function(){ arr.push( $(this).parent().next().next().text())    }) ;
+        return arr;
+    }
+    
+    $('#rmconftmp').on('click',function(){
+        $('#removeconftmpModal .modal-body h5 kbd').text(getCheckArray());        
+    })
+    
+    $('#commitremove').on('click',function(){
+        var url='conftmp/';
+        data = JSON.stringify(checklist);
+        function rmtmps(){
+                $(".rmtmps").removeClass('hidden');
+                setTimeout(function(){
+                $(".rmtmps").addClass('hidden');
+                },5000)
+        }
+        function rmtmpf(){
+                $(".rmtmpf").removeClass('hidden');
+                setTimeout(function(){
+                $(".rmtmpf").addClass('hidden');
+                },5000)
+        }
+        $.ajax(url,{dataType:'json',data:{'tmplist':data},type:'DELETE'}).done(function(data){
+            console.log(data);
+            if(data['status'] == 'success'){ rmtmps();getTableData();checklist=[];}
+            else{ rmtmpf();}
+        }).fail(function(){
+            rmtmpf();
+        })
+        $('#removeconftmpModal button.close').click();
+    })
+    
+    //=====Edit ConfigTemplate
+    $("#edditconftmp").click(function(){
+        clearConfTmpForm();
+        if(tname=$('table tbody :checkbox:checked').parent().siblings().first().next().text()){
+            $("#templatename").val(tname); 
+            $("#toaddconftmp").text('Eddit Template:'+tname);
+            $("#templatename").parent().addClass('hidden');
+            $("#copytmp").removeClass("hidden");
+            $("#saveConfTmp").addClass('hidden');
+            $("#updatatmp").removeClass('hidden');
+            var id=$('table tbody :checkbox:checked').parent().siblings().first().text();
+            var url='conftmp/key/'+id;
+            $.ajax(url,{dataType:'json'}).done(function(data){
+                data[id].map(function(x){
+                    var b = $("#kvtmp");
+                    b.find("#key").attr('value',x[0]);
+                    b.find("#value").attr('value',x[1]);
+                    $(".addconftmpform").append('<div class="row keyValueInput">' + b.html()+'</div>');
+                    bindrmkey();
+                })
+            }).fail(function(){
+                console.log('fail');
+            })
+        }else{
+           $(".modal-footer button").addClass("hidden");
+        }
+    })
+    
+    $("#copytmp").click(function(){
+        $("#toaddconftmp").text('Add Template:');
+        $("#updatatmp").addClass('hidden');
+        $("#saveConfTmp").removeClass('hidden');
+        $("#templatename").parent().removeClass('hidden');
+        $("#templatename").val('');
+        
+    })
+    
+    $("#updatatmp").click(function(){
+        if(saveConfTmpForm()){
+            var url = 'conftmp/key/';
+            var tid=$('table tbody :checkbox:checked').parent().siblings().first().text();
+            function addtpf(){
+                $(".uptmpf").removeClass('hidden');
+                setTimeout(function(){
+                $(".uptmpf").addClass('hidden');
+                },5000)
+            }
+            function addtps(){
+                $(".uptmps").removeClass('hidden');
+                setTimeout(function(){
+                $(".uptmps").addClass('hidden');
+                },5000)
+            }
+            $.ajax(url,{dataType:'json',type:'POST',data:{'tid':tid,'name':data['name'],'value':JSON.stringify(data['value'])}}).done(function(data){
+                if(data['status'] == 'success'){ addtps();}
+                else{ addtpf();}
+            }).fail(function(){
+                addtpf();
+            })
+            clearConfTmpForm();
+            $('#addconftmp button.close').click();
+            // add data to table;
+        }else{
+            //alert("请重新输入！");
+            return -1;
+        };
+    })
+    </script>
+{% end %}

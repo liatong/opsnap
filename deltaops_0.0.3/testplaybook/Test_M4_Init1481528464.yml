@@ -1,0 +1,49 @@
+---
+- hosts: "{{hosts}}"
+  tasks:
+  - name: create project directory
+    command: mkdir {{ProjectPath}} -p
+    args:
+      chdir: /tmp
+      creates: "{{ ProjectPath }}"
+
+  - name: apt-get install git
+    apt: name=git state=latest
+   
+  - name: clone server-tmp
+    git: repo=ssh://git@119.28.49.228:/data/gitrepository/server-tmp dest={{ProjectPath}}/server-tmp
+    args:
+      clone: yes
+      force: yes
+  - name: clone gitlib 
+    git: repo=ssh://git@119.28.49.228:/data/gitrepository/gitlibs dest={{ProjectPath}}/gitlibs
+    args:
+      clone: yes
+      force: yes
+  - name: ln -s lib gitlib
+    file: src={{ProjectPath}}/gitlibs dest={{ProjectPath}}/libs state=link force=yes
+ 
+  - name: clone gitbin
+    git: repo=ssh://git@119.28.49.228:/data/gitrepository/gitbin dest={{ProjectPath}}/gitbin
+    args:
+      clone: yes
+      force: yes
+  - name: ln -s bin gitbin
+    file: src={{ProjectPath}}/gitbin dest={{ProjectPath}}/bin state=link force=yes
+
+  - name: create log directory 
+    file: path={{ProjectPath}}/logs state=directory
+  - name: create service root dir 
+    file: path={{ProjectPath}}/{{ServiceRoot}} state=directory
+
+  - name: copy initconfig 
+    template: src=/data/ansible-playbook/config/initconfig dest={{ProjectPath}}/{{ServiceRoot}}/initconf
+ig
+
+  - name: create config directory
+    file: path={{ProjectPath}}/config/config state=directory
+
+  - name: copy logs.sh script  
+    template: src=/data/ansible-playbook/config/logs.sh  dest={{ProjectPath}}/logs/logs.sh
+
+...

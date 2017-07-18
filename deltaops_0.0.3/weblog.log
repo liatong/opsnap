@@ -1,0 +1,14 @@
+[I 161009 14:39:39 web:1946] 304 GET /project (172.17.92.229) 17.54ms
+[I 161009 14:39:39 web:1946] 304 GET /static/css/bootstrap.min.css (172.17.92.229) 10.87ms
+[I 161009 14:39:39 web:1946] 304 GET /static/css/sb-admin.css (172.17.92.229) 1.15ms
+[I 161009 14:39:39 web:1946] 304 GET /static/css/plugins/morris.css (172.17.92.229) 1.44ms
+[I 161009 14:39:39 web:1946] 304 GET /static/font-awesome/css/font-awesome.min.css (172.17.92.229) 1.35ms
+[I 161009 14:39:39 web:1946] 304 GET /static/js/jquery.js (172.17.92.229) 2.42ms
+[I 161009 14:39:39 web:1946] 304 GET /static/js/plugins/morris/raphael.min.js (172.17.92.229) 1.80ms
+[I 161009 14:39:39 web:1946] 304 GET /static/js/bootstrap.min.js (172.17.92.229) 2.57ms
+[I 161009 14:39:39 web:1946] 304 GET /static/js/plugins/morris/morris.min.js (172.17.92.229) 2.03ms
+[I 161009 14:39:39 web:1946] 304 GET /static/js/deltaops.js (172.17.92.229) 1.39ms
+[I 161009 14:39:39 web:1946] 304 GET /static/fonts/glyphicons-halflings-regular.woff2 (172.17.92.229) 1.29ms
+[I 161009 14:39:39 web:1946] 304 GET /static/js/plugins/morris/morris-data.js (172.17.92.229) 1.87ms
+[I 161009 14:39:40 web:1946] 304 GET /project/?page=1 (172.17.92.229) 34.29ms
+[I 161009 14:55:11 web:1946] 200 POST /project/init/ (172.17.92.229) 67150.93ms

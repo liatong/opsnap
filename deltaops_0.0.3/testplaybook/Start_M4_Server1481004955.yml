@@ -1,0 +1,18 @@
+---
+- hosts: "{{hosts}}"
+  tasks:
+  - name: check have server
+    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l
+    register: result
+  - name: svc start service 
+    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}
+    when: result.stdout == "1"
+    notify:
+    - restart process
+    - show pid
+  handlers:
+    - name:  restart process
+      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}
+    - name: show pid
+      shell: ./{{server}}/run show chdir={{project}}/{{serviceroot}}
+...

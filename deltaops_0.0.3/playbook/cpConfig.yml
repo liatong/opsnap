@@ -1,0 +1,22 @@
+---
+  - name: template file
+    template: src=/data/ansible-playbook/config/{{ item }} dest={{ProjectPath}}/config/{{ item }}
+    with_items:
+      - LBServer.ini
+      - AlarmServer.ini
+      - dblc.conf
+      - initconfig
+      - LBClientConfig.ini
+      - LBServer.ini
+      - lcconfig.ini
+      - libdbapi.conf
+      - NATConfig.ini
+      - PFRingRelayServer.ini
+
+  - name: template config/config file
+    template: src=/data/ansible-playbook/config/config/{{ item }} dest={{ProjectPath}}/config/config/{{ item }}
+    with_items:
+      - aasclient.conf
+      - aasserver.conf
+      - rcserver.ini 
+...

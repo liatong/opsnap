@@ -1,0 +1,15 @@
+---
+- hosts:  "{{hosts}}"
+  tasks:
+  - name: check have server 
+    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l
+    register: result
+  - name: svc stop service monitor
+    shell:  svc -dk  "{{server}}"  chdir={{project}}/{{serviceroot}}
+    when: result.stdout == "1"
+    notify:
+    - kill service
+  handlers:
+    - name: kill service 
+      shell: ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}
+...

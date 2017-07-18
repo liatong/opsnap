@@ -1,0 +1,11 @@
+---
+  - name: get svscan 
+    shell: ps aux |grep -v grep | grep svscan |grep {{ServiceRoot}} | wc -l
+    register: result 
+
+  - name: template f
+    shell: nohup svscan {{ServiceRoot}} &
+    when: result.stdout == "0" 
+    args:
+      chdir: "{{ ProjectPath }}"
+...

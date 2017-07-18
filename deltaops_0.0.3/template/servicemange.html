@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+
+{% block page-wrapper %}
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 class="page-header">
+                            Service管理
+                        </h4>
+                    </div>
+                </div>
+                <div class="row"> 
+                <div class="col-md-12">
+                    <div class="row">
+                    <form class="form-inline">
+                    
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="form-group">
+                                   <strong>Host</strong>&nbsp
+                                   <select class="form-control" id="selecthost">
+                                      <option>server</option>
+                                      <option>server-hk-asdf-2</option>
+                                      <option>server-hk-asdf-3</option>
+                                      <option>server-hk-asdf-4</option>
+                                      <option>server-hk-asdf-5</option>
+                                    </select>
+                                </div>
+                                <button type="button" id="addhost" class="btn btn-link btn-sm addlist">
+                                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                </button>
+                                
+                                <div class="form-group">
+                                   <strong>Group</strong>&nbsp
+                                   <select class="form-control" id="selectgroup">
+                                      <option>server-hk-asdf-sd</option>
+                                      <option>server-hk-asdf-sd</option>
+                                      <option>server-hk-asdf-sd</option>
+                                      <option>server-hk-asdf-sd</option>
+                                      <option>server-hk-asdf-sd</option>
+                                    </select>
+                                </div>
+                                <button type="button" id="addgroup" class="btn btn-link btn-sm addlist">
+                                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                </button>
+                            </div><p>
+                            <div class="row">
+                                <div class="form-group">
+                                   <strong>Type</strong>&nbsp
+                                   <select class="form-control" id="type">
+                                      <option>Vidagrid</option>
+                                      <option>ASI</option>
+                                    </select>
+                                     <button type="button" id="" class="btn btn-link btn-sm">
+                                       
+                                    </button>
+                                </div>
+                                <div class="form-group">
+                                   <strong>Service</strong>&nbsp
+                                   <select class="form-control" id="selectserver">
+                                      <option>lbserver</option>
+                                      <option>lcserver</option>
+                                      <option>aasserver</option>
+                                      <option>cmserver</option>
+                                      <option>upload</option>
+                                      <option>vlnserver</option>
+                                      <option>vlndhcp</option>
+                                      <option>alarmserver</option>
+                                    </select>
+                                     <button type="button" id="addserver" class="btn btn-link btn-sm addlist">
+                                       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="row">
+                                    Action:
+                                    <label class="radio-inline">
+                                      <input type="radio" name="action" id="inlineRadio1" value="start">启动
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="action" id="inlineRadio2" value="stop"> 停止
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="action" id="inlineRadio2" value="restart"> 重启
+                                    </label>
+                              
+                            </div>
+                            <div class="row">
+                               <button type="button" class="btn btn-primary " id="run" >Run <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span> </button>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    
+                    
+                    
+                    </form>
+                    </div><p>
+                    
+                    <div class="row">
+                    
+                        <strong id="hostlist">Host: 
+                        </strong>
+                        <strong id="grouplist">Group:
+                        </strong>
+                        <strong id="serverlist">Service:
+                        </strong>
+                    </div><p>
+                </div>    
+                </div>
+                
+           
+                
+                
+                <!-- /.row -->
+                <div class="row">
+                <!-- modal add conftmp-->
+                <div class="modal fade" id="addconftmp" tabindex="-1" role="dialog" aria-labelledby="toaddconftmp">
+                  <div class="modal-dialog  role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="toaddconftmp">Config Template</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                        <form id= "addconftmpform" class="form-inline">
+                            
+                            
+                            <div class="row keyValueInput hide">
+                            
+                                    <div class="form-group">
+                                      
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Key</span>
+                                            <input type="text" class="form-control" id="key" placeholder="xmserve-m4-product">
+                                        </div>
+                                    </div>&nbsp&nbsp
+                                   
+                                
+                                    <div class="form-group">
+                                       
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Value</span>
+                                            <input type="text" class="form-control" id="value" placeholder="/data/M4Product">
+                                        </div>    
+                                    </div>&nbsp&nbsp
+                              
+                                    <button type="button" class="btn btn-link btn-sm  removeKey">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    </button>
+                                   
+                                <p>
+                            </div> 
+                            
+                        </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button  id="addKeyInput" type="button" class="btn btn-link  ">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增KEY
+                        </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveConfTmp" >Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- end modal add conftmp-->
+                
+              <!--- show run info -->
+              
+              <!-- show run info -->
+                <div class="col-md-12">
+                    <h3></h3>
+                    <div class="row">
+                        <div class="panel panel-default">
+                          <div class="panel-heading"><h5>运行信息:</h5></div>
+                          <div class="panel-body">
+                            Panel content
+                          </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                    
+                    </div>
+                </div>
+                
+                <!-- project table -->
+                <table  id="showconftmp" class="table table-bordered table-hover table-striped hide">
+                    <thead>
+                        <tr>
+                            <th>全选</th>
+                            <th>模板ID</th>
+                            <th>模板名称</th>
+                            <th>关联对象</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                
+                      
+                    </tbody>
+                </table>
+ 
+                <!-- end  project table -->
+                <!-- row page -->
+               
+                  <ul class="pager hide">
+                    <li><a href="#">Previous</a></li>
+                    <li><a href="#">Next</a></li>
+                  </ul>
+              
+                <!-- row page -->   
+                </div>
+               
+                <!-- Flot Charts -->
+
+                 
+            </div>
+            <!-- /.container-fluid -->
+{% end %}
+
+{% block script-extend %}
+    <script>
+    var hostlist = [1,2,3,4];
+    var grouplist = [];
+    var serverlist = [];
+    
+    function bindkbd(){
+        $("kbd").dblclick(function(){
+        
+            if($(this).parent().attr('id') == 'hostlist'){
+                hostlist.pop($(this).text())
+            }else if($(this).parent().attr('id') == 'grouplist'){
+                grouplist.pop($(this).text());
+            }else{
+                serverlist.pop($(this).text());
+            }        
+            $(this).remove();
+        })
+    }
+    bindkbd();
+   
+    function appendlist(obj,dt,listobj){
+        if( listobj.indexOf(dt) >= 0 ){
+            console.log('list had: '+dt);
+        }else{
+            obj.append('<kbd>'+dt+'</kbd>');
+            obj.append("&nbsp;");
+            listobj.push(dt);
+        }
+    }
+    
+    function showserverlist(obj){
+        //console.log(obj);
+        //var obj = ['lbserver','lcserver','cmsserver','aasserver','vlns','vlndhcp','alarmserver'];
+        $("#selectserver").children().remove();
+        obj.map(function(x){
+            $("#selectserver").append('<option>'+x+'</option>');
+        })
+    }
+    
+    $(".addlist").click(function(){
+        let id = $(this).attr('id');
+        let obj,dt,listobj;
+        if (id == 'addhost'){
+            obj = $("#hostlist");
+            dt  = $("#selecthost").val();
+            listobj = hostlist;
+        }else if( id == 'addgroup'){
+            obj = $("#grouplist");
+            dt  = $("#selectgroup").val();
+            listobj = grouplist;
+        }else if( id == 'addserver'){
+            obj = $("#serverlist");
+            dt  = $("#selectserver").val();
+            listobj = serverlist;
+        }
+        appendlist(obj,dt,listobj);
+        bindkbd();
+    })
+    
+    $("#type").change(function(){
+        var obj;
+        var vidagrid = ['all','lbserver','lcserver','cmsserver','aasserver','vlns','vlndhcp','alarmserver'];
+        var asi = ['all','aaserver','dnsserver','rsserver'];
+        ($(this).val() == 'Vidagrid') ? obj = vidagrid : obj = asi;
+        //console.log(obj);
+        showserverlist(obj);
+        serverlist = [];
+        $("#serverlist").children().remove();
+    })
+    
+    </script>
+{% end %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Poem Maker Pro</title></head>
+    
+    <body>
+    {% extends "base.html" %}
+    
+    {% block title %}
+        Hello! test templet extend
+    {% end %}
+    {% block body %}
+        {% raw autoescape %} <!-- 不进行自动转意 -->
+        
+        {% for  d in data%}
+            <p>{{d}}</p>
+        {% end %}
+        <h1>Enter terms below.</h1>
+        <form method="post" action="/poem">
+        <p>Plural noun<br><input type="text" name="noun1"></p>
+        <p>Singular noun<br><input type="text" name="noun2"></p>
+        <p>Verb (past tense)<br><input type="text" name="verb"></p>
+        <p>Noun<br><input type="text" name="noun3"></p>
+        <input type="submit">
+        </form>
+    {% end %}
+    </body>
+</html>

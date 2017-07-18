@@ -1,0 +1,421 @@
+
+{% extends "base.html" %}
+
+   
+       {% block page-wrapper %}
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 class="page-header">
+                            操作脚本管理
+                        </h4>
+                    </div>
+                </div>     
+                <div class="row">
+                    <ul>
+                     <button type="button" class="btn btn-primary" id="addproject" data-toggle="modal" data-target="#addplaybook">新增Playbook脚本</button>
+                     <button type="button" class="btn btn-primary" id="rmproject" data-toggle="modal" data-target="#removeprojectModal">删除Playbook脚本</button>
+                     <button type="button" class="btn btn-primary" id="updateplay" data-toggle="modal" data-target="#updateplaybook">更新Playbook内容</button>
+                     <button type="button" class="btn btn-primary hide" id="smanage" data-toggle="modal" data-target="#smanageModel">
+                      Launch demo modal
+                    </button>
+                    </ul>
+                    
+                </div>
+                
+                <!-- /.row -->
+                <div class="row">
+                <!-- modal add project-->
+                <div class="modal fade" id="addplaybook" tabindex="-1" role="dialog" aria-labelledby="toaddplay">
+                  <div class="modal-dialog " role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="toaddplay">Add Play Book</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                        <p class="bg-danger errorinfo hidden "> asdfasdf</p>
+                        <form id= "playbookmanager/" class="form-horizontal">
+                        
+                            <div class="form-group">
+                                <label for="projectname">操作动作名称</label>
+                                <input type="text" class="form-control" id="actionname" placeholder="InfluxDB Restart">
+                            </div>
+                            <div class="form-group">
+                                <label for="projectname">操作类型</label>
+                                <input type="text" class="form-control" id="type" placeholder="Service Manager">
+                            </div>
+                            <div class="form-group">
+                                <label for="projectname">提交人</label>
+                                <input type="text" class="form-control" id="author" placeholder="wentong.li">
+                            </div>
+                            <div class="form-group">
+                                <label for="projectname">playbook脚本内容</label>
+                                <textarea class="form-control" id="playbook" rows="15" placeholder="请将测试后的playbook内容粘贴到此处。"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="projectname">脚本描述</label>
+                                <input type="text" class="form-control" id="comment" placeholder="请简要描述脚本作用">
+                            </div>
+  
+                        </form>
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="saveplaybook" >Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- end modal add project-->
+                <!-- update the playbook -->
+                <div class="modal fade" id="updateplaybook" tabindex="-1" role="dialog" aria-labelledby="toupdateplay">
+                  <div class="modal-dialog " role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="toupdateplay">Add Play Book</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                        <p class="bg-danger errorinfo hidden "> asdfasdf</p>
+                        <form id= "updateForm" class="form-horizontal">
+                        
+                            <div class="form-group">
+                                <label for="projectname">操作动作名称</label>
+                                <input type="text" class="form-control" id="actionname" placeholder="InfluxDB Restart" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectname">操作类型</label>
+                                <input type="text" class="form-control" id="type" placeholder="Service Manager">
+                            </div>
+                            <div class="form-group">
+                                <label for="projectname">提交人</label>
+                                <input type="text" class="form-control" id="author" placeholder="wentong.li">
+                            </div>
+                            <div class="form-group">
+                                <label for="projectname">playbook脚本内容</label>
+                                <textarea class="form-control" id="playbook" rows="15" placeholder="请将测试后的playbook内容粘贴到此处。"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="projectname">脚本描述</label>
+                                <input type="text" class="form-control" id="comment" placeholder="请简要描述脚本作用">
+                            </div>
+  
+                        </form>
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="putplay" >Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- update the playbook-->
+                
+                <!-- modal remove project-->
+                <div class="modal fade" id="removeprojectModal" tabindex="-1" role="dialog" aria-labelledby="removeprojectModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title" id="removeprojectModalLabel">删除项目</h3>
+                      </div>
+                      <div class="modal-body">
+                         <h5>你将删除项目:<kbd ></kbd></h5>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="commitremove">Commit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+       
+                <!-- end modal remove project-->
+                
+                <!-- modal manage server-->
+                <div class="modal fade" id="smanageModel" tabindex="-1" role="dialog" aria-labelledby="smanageLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="smanageLabel">Playbook内容</h4>
+                      </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                        <p class="bg-danger errorinfo hidden "> asdfasdf</p>
+                        <input id="clickprojectid" value="0" class="hide" >
+                        <form id= "playbookmanager/" class="form-horizontal">
+                            
+                            <div class="form-group">
+                                <label for="projectname">playbook脚本内容</label>
+                                <textarea class="form-control" id="playbookcontent" rows="15" placeholder="请将测试后的playbook内容粘贴到此处。"readonly></textarea>
+                            </div>
+                            
+                        </form>
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end  modal manage server-->
+                
+                <!-- project table -->
+                 <p class="bg-danger addpjs hidden" >新增Playbook成功!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                 <p class="bg-danger putpjs hidden" >更新Playbook成功!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                 <p class="bg-danger addpjf hidden" >新增Playbook失败!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                 <p class="bg-danger putpjf hidden" >更新Playbook失败!<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                 <div class="table-responsive">
+                <table  id="showproject" class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>全选</th>
+                            <th>PlayBook ID</th>
+                            <th>Action名称</th>
+                            <th>Action类型</th>
+                             <th>提交人</th>
+                            <th>备注</th>
+                            <th>更新时间</th>
+                            <th class="hidden" >内容</th>
+                            <th>查看内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                
+                      
+                    </tbody>
+                </table>
+                </div>
+                <!-- end  project table -->
+                <!-- row page -->
+                <nav>
+                  <ul class="pager">
+                    <li><button  type="button" class="btn btn-info btn-sm" id="upPage" ><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Up</button></li>
+                    <strong id="pageNum">1</strong>
+                    <li><button type="button" class="btn btn-info btn-sm" id="downPage">Down <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button></li>
+                  </ul>
+                </nav>
+              
+                <!-- row page -->   
+                </div>
+               
+                <!-- Flot Charts -->
+
+                 
+            </div>
+            <!-- /.container-fluid -->
+           
+    {% end %}
+    {% block script-extend %}
+    <script>
+    
+    //******************Add the playbook file V0.0.2 **************************//
+    function clearPostForm(){
+        $('#addplaybook form :input').each(function(){
+            (this.type == 'checkbox') ? $(this).prop('checked',false): this.value='';
+        });
+        return 1;
+    }
+    
+    function postFormToServer(){
+        var posturl = 'playbookmanager/id/';
+        var playbookformdata = {};
+        $('#addplaybook form :input').each(function(){
+            playbookformdata[this.id]=this.value;
+        })
+        console.log(playbookformdata);
+        function addpjs(){
+                $(".addpjs").removeClass('hidden');
+                setTimeout(function(){
+                $(".addpjs").addClass('hidden');
+                },5000)
+            }
+        function addpjf(){
+            $(".addpjf").removeClass('hidden');
+            setTimeout(function(){
+            $(".addpjf").addClass('hidden');
+            },5000)
+        }
+            
+        $.ajax(posturl,{dataType:'json',type:'POST',data:playbookformdata}).done(function(data){
+            addpjs();
+            showProjectTable();
+        }).fail(function(data){
+            addpjf();
+        })
+        clearPostForm();
+        $('#addplaybook button.close').click();
+    }
+    
+    $('#saveplaybook').click(function(){postFormToServer();});
+    
+   //*****************  Update the playbook ***********************************//
+   function updateForm(){
+        let id = checklist[0];
+        console.log(tabledata);
+        console.log(tabledata['data']);
+        console.log(id);
+        console.log(tabledata['data'][id]);
+        $("#updateForm #actionname").val(tabledata['data'][id][1]);
+        $("#updateForm #type").val(tabledata['data'][id][2]);
+        $("#updateForm #author").val(tabledata['data'][id][3]);
+        $("#updateForm #comment").val(tabledata['data'][id][4]);
+        $("#updateForm #playbook").val(tabledata['data'][id][6]);
+    }
+    
+   $('#updateplay').click(function(){updateForm();})
+   
+   $("#putplay").click(function(){
+        var posturl = 'playbookmanager/id/'+checklist[0];
+        var playbookformdata = {};
+        $('#updateplaybook form :input').each(function(){
+            playbookformdata[this.id]=this.value;
+        })
+        console.log(playbookformdata);
+        function addpjs(){
+                $(".putpjs").removeClass('hidden');
+                setTimeout(function(){
+                $(".putpjs").addClass('hidden');
+                },5000)
+            }
+        function addpjf(){
+            $(".putpjf").removeClass('hidden');
+            setTimeout(function(){
+            $(".putpjf").addClass('hidden');
+            },5000)
+        }
+            
+        $.ajax(posturl,{dataType:'json',type:'PUT',data:playbookformdata}).done(function(data){
+            addpjs();
+            showProjectTable();
+        }).fail(function(data){
+            addpjf();
+        })
+        clearPostForm();
+        $('#updateplaybook button.close').click();
+   
+   })
+   
+   //*****************Get the playbook list and display to page V0.0.2 *****************//
+   var checklist = []
+   function showPlaybook(){
+      var id = $('#clickprojectid').val();
+      $("#smanageModel #playbookcontent").val(tabledata['data'][id][6]);
+   
+   }
+   
+   function checkBindFunction(){
+        $('table tbody :checkbox').click(function(){ 
+            if($(this).prop('checked')){
+                checklist.push($(this).parent().siblings().first().text());
+                $(this).parent().parent().addClass('success')
+            }else{ 
+                checklist.pop(checklist.indexOf($(this).parent().siblings().first().text()));
+                $(this).parent().parent().removeClass('success')
+            };
+        })
+        
+        $('button.smanage').click(function(){
+            var clickprojectid = $(this).parent().siblings().first().next().text();
+            $("#smanage").click();
+            $("#clickprojectid").val(clickprojectid);
+           
+            console.log("adf");
+            showPlaybook();
+            console.log("adf");
+        })
+   }
+   
+    var tabledata = {};
+    function showProjectTable(){
+        checklist = [];
+        var page = $("#pageNum").text();
+        var url='playbookmanager/page/'+page;
+        //console.log(url)
+        $.ajax(url,{type:'GET'}).done(function(data){
+            tabledata = JSON.parse(data);
+            //console.log(tabledata);
+            var data = {}
+            for (key in tabledata['data']){
+                //console.log(key);
+                //console.log(tabledata['data'][key].length-1);
+                var l = tabledata['data'][key].length-1;
+                data[key] = tabledata['data'][key].slice(0,l);
+            };
+            
+            let endtdhtml = '<button type="button" class="btn btn-link smanage"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></button>';
+            let stdhtml = '<input type="checkbox">';
+            let tb = $('#showproject tbody');
+            showDataTable(tb,data,stdhtml,endtdhtml,checkBindFunction);
+        }).fail(function(){
+            console.log('fail');
+        })
+    }
+    
+    showProjectTable();
+    
+    //****************Delete playbook V0.0.2 ************************************//
+    
+    function getCheckArray(){
+        var selectAll = $('table tbody :checkbox:checked');
+        var arr = [];
+        selectAll.each(function(){ arr.push( $(this).parent().next().next().text())    }) ;
+        console.log(arr);
+        return arr;
+    }
+    
+    $('#rmproject').on('click',function(){
+        $('#removeprojectModal .modal-body h5 kbd').text(getCheckArray());        
+    })
+    
+    $('#commitremove').on('click',function(){
+        let id = checklist[0];
+        let url = 'playbookmanager/id/'+id;
+        
+        function rmpjs(){
+            $(".rmpjs").removeClass('hidden');
+            setTimeout(function(){
+            $(".rmpjs").addClass('hidden');
+            },5000)
+        }
+        function rmpjf(){
+            $(".rmpjf").removeClass('hidden');
+            setTimeout(function(){
+            $(".rmpjf").addClass('hidden');
+            },5000)
+        }
+        $.ajax(url,{dataType:'json',data:{'delete':id},type:'DELETE'}).done(function(data){
+            if( data['status'] == 'fail' ){rmpjf();}
+            else{rmpjs();};
+            showProjectTable();
+            
+        }).fail(function(){
+            rmpjf();
+        })
+        $("#removeprojectModal .close").click();
+    })
+    
+    
+    //****************** END V0.0.02 *********************************************//
+    
+   
+    
+    </script>
+    {% end %}
+</body>
+
+</html>

@@ -1,0 +1,777 @@
+[I 161103 10:36:13 web:1946] 200 GET /host (172.17.92.116) 41.73ms
+[I 161103 10:36:14 web:1946] 200 GET /host/get/1 (172.17.92.116) 400.88ms
+[I 161103 10:36:25 web:1946] 304 GET /project (172.17.92.116) 49.78ms
+[I 161103 10:36:25 web:1946] 304 GET /project/?page=1 (172.17.92.116) 30.14ms
+[I 161103 10:36:33 web:1946] 200 GET /project/service/7 (172.17.92.116) 17.71ms
+[I 161103 10:36:40 web:1946] 200 GET /conftmp (172.17.92.116) 41.50ms
+[I 161103 10:36:40 web:1946] 200 GET /conftmp/?page=1 (172.17.92.116) 2.85ms
+[I 161103 10:36:45 web:1946] 200 GET /conftmp/key/28 (172.17.92.116) 4.34ms
+[I 161103 10:38:08 web:1946] 200 GET /deploycode (172.17.92.116) 33.50ms
+[I 161103 10:38:20 web:1946] 304 GET /host (172.17.92.116) 16.05ms
+[I 161103 10:38:21 web:1946] 304 GET /host/get/1 (172.17.92.116) 6.02ms
+[I 161103 11:21:05 web:1946] 304 GET /host (172.17.92.116) 17.28ms
+[I 161103 11:21:05 web:1946] 304 GET /host/get/1 (172.17.92.116) 6.87ms
+[I 161103 11:21:06 web:1946] 304 GET /host (172.17.92.116) 16.83ms
+[I 161103 11:21:06 web:1946] 304 GET /host/get/1 (172.17.92.116) 5.96ms
+[I 161103 11:21:08 web:1946] 304 GET /host (172.17.92.116) 16.75ms
+[I 161103 11:21:08 web:1946] 304 GET /host/get/1 (172.17.92.116) 5.16ms
+[I 161103 11:21:10 web:1946] 304 GET /project (172.17.92.116) 17.42ms
+[I 161103 11:21:10 web:1946] 304 GET /project/?page=1 (172.17.92.116) 2.82ms
+[I 161103 11:21:11 web:1946] 304 GET /deploycode (172.17.92.116) 15.09ms
+[I 161103 11:21:16 web:1946] 304 GET /host (172.17.92.116) 16.95ms
+[I 161103 11:21:16 web:1946] 304 GET /host/get/1 (172.17.92.116) 5.10ms
+[I 161103 11:23:25 web:1946] 200 GET /group/all (172.17.92.116) 3.12ms
+[W 161103 11:23:25 web:1946] 404 GET /host/group/ (172.17.92.116) 2.55ms
+[I 161103 11:23:31 web:1946] 304 GET /group/all (172.17.92.116) 3.36ms
+[I 161103 11:23:31 web:1946] 200 GET /host/group/21 (172.17.92.116) 2.25ms
+[I 161103 11:23:53 web:1946] 304 GET /project (172.17.92.116) 18.64ms
+[I 161103 11:23:54 web:1946] 304 GET /project/?page=1 (172.17.92.116) 3.04ms
+[I 161103 11:24:05 web:1946] 200 GET /servicemange (172.17.92.116) 206.14ms
+[I 161103 11:24:10 web:1946] 304 GET /conftmp (172.17.92.116) 15.26ms
+[I 161103 11:24:10 web:1946] 304 GET /conftmp/?page=1 (172.17.92.116) 3.14ms
+[I 161103 11:24:16 web:1946] 304 GET /conftmp/key/28 (172.17.92.116) 3.34ms
+[I 161104 11:23:51 web:1946] 304 GET /host (172.17.92.116) 18.11ms
+[I 161104 11:23:52 web:1946] 200 GET /static/css/sb-admin.css (172.17.92.116) 9.67ms
+[I 161104 11:23:53 web:1946] 304 GET /host/get/1 (172.17.92.116) 4.83ms
+[I 161104 11:23:58 web:1946] 200 GET /group (172.17.92.116) 25.25ms
+[I 161104 11:23:59 web:1946] 200 GET /group/?page=1 (172.17.92.116) 2.67ms
+[I 161104 11:24:03 web:1946] 304 GET /project (172.17.92.116) 16.95ms
+[I 161104 11:24:03 web:1946] 304 GET /project/?page=1 (172.17.92.116) 4.45ms
+[I 161104 11:24:22 web:1946] 200 GET /project/service/9 (172.17.92.116) 19.37ms
+[E 161104 11:24:31 web:1524] Uncaught exception POST /servicemange (172.17.92.116)
+    HTTPServerRequest(protocol='http', host='172.17.92.167:8080', method='POST', uri='/servicemange', version='HTTP/1.1', remote_ip='172.17.92.116', headers={'Origin': 'http://172.17.92.167:8080', 'Content-Length': '23', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': '172.17.92.167:8080', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36', 'Connection': 'keep-alive', 'X-Requested-With': 'XMLHttpRequest', 'Referer': 'http://172.17.92.167:8080/project', 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'})
+    Traceback (most recent call last):
+      File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "main.py", line 684, in post
+        servicepl = subhandlers.serviceHandlerFactor(action,pid,sid,db).createPlaybook()
+      File "/data/web/subhandlers.py", line 36, in createPlaybook
+        return self.handers[self.action]
+    KeyError: u'show'
+[E 161104 11:24:31 web:1946] 500 POST /servicemange (172.17.92.116) 50.04ms
+[I 161104 14:32:33 web:1946] 200 GET /project/service/7 (172.17.92.116) 4.68ms
+[I 161104 14:32:37 web:1946] 304 GET /group (172.17.92.116) 14.02ms
+[I 161104 14:32:38 web:1946] 304 GET /group/?page=1 (172.17.92.116) 3.25ms
+[I 161104 14:32:51 web:1946] 200 GET /group/member/8 (172.17.92.116) 2.97ms
+[I 161104 14:32:59 web:1946] 304 GET /group/member/8 (172.17.92.116) 3.13ms
+[I 161104 14:33:08 web:1946] 304 GET /host (172.17.92.116) 15.01ms
+[I 161104 14:33:09 web:1946] 304 GET /host/get/1 (172.17.92.116) 5.83ms
+[I 161104 14:33:21 web:1946] 304 GET /project (172.17.92.116) 16.96ms
+[I 161104 14:33:22 web:1946] 304 GET /project/?page=1 (172.17.92.116) 3.06ms
+[I 161104 14:33:42 web:1946] 304 GET /deploycode (172.17.92.116) 15.47ms
+[I 161104 14:33:55 web:1946] 304 GET /host (172.17.92.116) 16.00ms
+[I 161104 14:33:56 web:1946] 304 GET /host/get/1 (172.17.92.116) 8.10ms
+[I 161104 14:36:49 web:1946] 304 GET /project (172.17.92.116) 17.66ms
+[I 161104 14:36:49 web:1946] 304 GET /project/?page=1 (172.17.92.116) 1.72ms
+[I 161104 14:36:50 web:1946] 200 GET /host/all (172.17.92.116) 3.37ms
+[I 161104 14:36:50 web:1946] 200 GET /conftmp/all (172.17.92.116) 2.88ms
+[I 161104 14:37:19 web:1946] 200 POST /project/init/ (172.17.92.116) 2.99ms
+[I 161107 09:36:08 web:1946] 304 GET /project (172.17.92.116) 16.02ms
+[I 161107 09:36:13 web:1946] 304 GET /static/css/plugins/morris.css (172.17.92.116) 3.09ms
+[I 161107 09:36:13 web:1946] 304 GET /static/font-awesome/css/font-awesome.min.css (172.17.92.116) 1.55ms
+[I 161107 09:36:13 web:1946] 304 GET /static/css/bootstrap.min.css (172.17.92.116) 2.13ms
+[I 161107 09:36:13 web:1946] 304 GET /static/css/sb-admin.css (172.17.92.116) 1.38ms
+[I 161107 09:36:13 web:1946] 304 GET /static/js/jquery.js (172.17.92.116) 1.79ms
+[I 161107 09:36:13 web:1946] 304 GET /static/js/bootstrap.min.js (172.17.92.116) 3.12ms
+[I 161107 09:36:13 web:1946] 304 GET /static/js/plugins/morris/raphael.min.js (172.17.92.116) 2.23ms
+[I 161107 09:36:13 web:1946] 304 GET /static/js/plugins/morris/morris.min.js (172.17.92.116) 1.82ms
+[I 161107 09:36:13 web:1946] 304 GET /static/js/plugins/morris/morris-data.js (172.17.92.116) 1.55ms
+[I 161107 09:36:13 web:1946] 304 GET /static/js/deltaops.js (172.17.92.116) 1.26ms
+[I 161107 09:36:14 web:1946] 304 GET /project/?page=1 (172.17.92.116) 4.62ms
+[I 161107 09:36:15 web:1946] 304 GET /static/fonts/glyphicons-halflings-regular.woff2 (172.17.92.116) 1.72ms
+[I 161107 09:38:25 web:1946] 304 GET /host (172.17.92.116) 11.45ms
+[I 161107 09:38:25 web:1946] 304 GET /host/get/1 (172.17.92.116) 5.65ms
+[I 161107 09:38:46 web:1946] 304 GET /project (172.17.92.116) 16.92ms
+[I 161107 09:38:46 web:1946] 304 GET /project/?page=1 (172.17.92.116) 3.89ms
+[I 161107 09:39:09 web:1946] 304 GET /conftmp (172.17.92.116) 15.10ms
+[I 161107 09:39:09 web:1946] 304 GET /conftmp/?page=1 (172.17.92.116) 4.49ms
+[I 161107 09:39:13 web:1946] 304 GET /conftmp/key/28 (172.17.92.116) 4.20ms
+[I 161107 09:39:52 web:1946] 304 GET /project (172.17.92.116) 16.60ms
+[I 161107 09:39:52 web:1946] 304 GET /project/?page=1 (172.17.92.116) 3.39ms
+[I 161107 09:40:08 web:1946] 200 GET /project/service/11 (172.17.92.116) 3.16ms
+[I 161108 13:42:32 autoreload:204] /usr/lib/pymodules/python2.7/ansible/inventory/ini.py modified; restarting server
+[I 161108 17:07:56 autoreload:204] /usr/lib/pymodules/python2.7/ansible/utils/plugins.py modified; restarting server
+[I 161108 17:19:48 autoreload:204] /usr/lib/pymodules/python2.7/ansible/utils/plugins.py modified; restarting server
+[I 161108 17:34:33 autoreload:204] /usr/lib/pymodules/python2.7/ansible/utils/plugins.py modified; restarting server
+Traceback (most recent call last):
+  File "main.py", line 9, in <module>
+    import ansibleapi
+  File "/data/web/ansibleapi.py", line 3, in <module>
+    import ansible.playbook
+  File "/usr/lib/pymodules/python2.7/ansible/playbook/__init__.py", line 18, in <module>
+    import ansible.inventory
+  File "/usr/lib/pymodules/python2.7/ansible/inventory/__init__.py", line 26, in <module>
+    from ansible.inventory.ini import InventoryParser
+  File "/usr/lib/pymodules/python2.7/ansible/inventory/ini.py", line 21, in <module>
+    from ansible.inventory.host import Host
+  File "/usr/lib/pymodules/python2.7/ansible/inventory/host.py", line 19, in <module>
+    from ansible import utils
+  File "/usr/lib/pymodules/python2.7/ansible/utils/__init__.py", line 28, in <module>
+    from ansible.utils.plugins import *
+  File "/usr/lib/pymodules/python2.7/ansible/utils/plugins.py", line 218
+    print name "debug"
+                     ^
+SyntaxError: invalid syntax
+[I 161115 09:29:22 web:1946] 304 GET /project (172.17.92.116) 21.81ms
+[I 161115 09:29:23 web:1946] 304 GET /static/css/bootstrap.min.css (172.17.92.116) 59.93ms
+[I 161115 09:29:23 web:1946] 304 GET /static/font-awesome/css/font-awesome.min.css (172.17.92.116) 1.46ms
+[I 161115 09:29:23 web:1946] 304 GET /static/css/sb-admin.css (172.17.92.116) 1.30ms
+[I 161115 09:29:23 web:1946] 304 GET /static/css/plugins/morris.css (172.17.92.116) 1.24ms
+[I 161115 09:29:23 web:1946] 304 GET /static/js/jquery.js (172.17.92.116) 2.05ms
+[I 161115 09:29:23 web:1946] 304 GET /static/js/bootstrap.min.js (172.17.92.116) 1.71ms
+[I 161115 09:29:23 web:1946] 304 GET /static/js/plugins/morris/raphael.min.js (172.17.92.116) 2.65ms
+[I 161115 09:29:23 web:1946] 304 GET /static/js/plugins/morris/morris.min.js (172.17.92.116) 1.42ms
+[I 161115 09:29:23 web:1946] 304 GET /static/js/deltaops.js (172.17.92.116) 1.30ms
+[I 161115 09:29:23 web:1946] 304 GET /static/js/plugins/morris/morris-data.js (172.17.92.116) 1.10ms
+[I 161115 09:29:24 web:1946] 304 GET /static/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0 (172.17.92.116) 2.15ms
+[I 161115 09:29:24 web:1946] 304 GET /static/fonts/glyphicons-halflings-regular.woff2 (172.17.92.116) 1.41ms
+[I 161115 09:29:25 web:1946] 304 GET /project/?page=1 (172.17.92.116) 113.49ms
+[I 161115 09:29:46 web:1946] 200 GET /host (172.17.92.116) 37.89ms
+[I 161115 09:29:47 web:1946] 200 GET /host/get/1 (172.17.92.116) 59.83ms
+[I 161115 09:30:14 web:1946] 200 GET /servicemange (172.17.92.116) 2559.15ms
+[I 161115 09:30:17 web:1946] 200 GET /servicemange (172.17.92.116) 2996.29ms
+[I 161115 09:31:03 web:1946] 200 DELETE /host/del (172.17.92.116) 452.33ms
+[I 161115 09:31:46 web:1946] 200 POST /host/post (172.17.92.116) 246.05ms
+[I 161115 09:31:46 web:1946] 200 GET /host/get/1 (172.17.92.116) 7.74ms
+[I 161115 09:32:47 autoreload:204] main.py modified; restarting server
+[I 161115 09:32:57 autoreload:204] main.py modified; restarting server
+[I 161115 09:43:42 web:1946] 304 GET /project (172.17.92.116) 33.84ms
+[I 161115 09:43:42 web:1946] 304 GET /project/?page=1 (172.17.92.116) 12.13ms
+[I 161115 09:43:44 web:1946] 200 GET /conftmp (172.17.92.116) 40.05ms
+[I 161115 09:43:45 web:1946] 200 GET /conftmp/?page=1 (172.17.92.116) 3.16ms
+[I 161115 09:43:55 web:1946] 304 GET /host (172.17.92.116) 15.69ms
+[I 161115 09:43:55 web:1946] 304 GET /host/get/1 (172.17.92.116) 5.03ms
+[I 161115 09:46:57 web:1946] 200 GET /host (172.17.92.116) 15.33ms
+[I 161115 09:46:57 web:1946] 304 GET /static/css/bootstrap.min.css (172.17.92.116) 9.77ms
+[I 161115 09:46:57 web:1946] 304 GET /static/css/sb-admin.css (172.17.92.116) 1.22ms
+[I 161115 09:46:57 web:1946] 304 GET /static/css/plugins/morris.css (172.17.92.116) 1.32ms
+[I 161115 09:46:57 web:1946] 304 GET /static/font-awesome/css/font-awesome.min.css (172.17.92.116) 1.76ms
+[I 161115 09:46:57 web:1946] 304 GET /static/js/jquery.js (172.17.92.116) 2.83ms
+[I 161115 09:46:57 web:1946] 304 GET /static/js/deltaops.js (172.17.92.116) 1.50ms
+[I 161115 09:46:57 web:1946] 304 GET /static/js/plugins/morris/morris.min.js (172.17.92.116) 2.31ms
+[I 161115 09:46:57 web:1946] 304 GET /static/js/plugins/morris/raphael.min.js (172.17.92.116) 1.81ms
+[I 161115 09:46:57 web:1946] 304 GET /static/js/bootstrap.min.js (172.17.92.116) 1.54ms
+[I 161115 09:46:57 web:1946] 304 GET /static/js/plugins/morris/morris-data.js (172.17.92.116) 1.65ms
+[I 161115 09:46:57 web:1946] 304 GET /static/fonts/glyphicons-halflings-regular.woff2 (172.17.92.116) 1.79ms
+[I 161115 09:46:57 web:1946] 304 GET /host/get/1 (172.17.92.116) 10.03ms
+[W 161115 09:47:00 web:1946] 404 GET /addplaybook (172.17.92.116) 68.35ms
+[I 161115 09:49:20 autoreload:204] main.py modified; restarting server
+Traceback (most recent call last):
+  File "main.py", line 750, in <module>
+    http_server = tornado.httpserver.HTTPServer(Application())
+  File "main.py", line 733, in __init__
+    (r"/addplaybook",AddPlayBook),
+NameError: global name 'AddPlayBook' is not defined
+[I 161208 16:22:13 web:1946] 302 GET / (172.17.92.116) 1.73ms
+[I 161208 16:22:13 web:1946] 200 GET /login?next=%2F (172.17.92.116) 5.15ms
+[I 161208 16:22:13 web:1946] 200 GET /static/css/signin.css (172.17.92.116) 8.99ms
+[I 161208 16:22:13 web:1946] 304 GET /static/js/ie-emulation-modes-warning.js (172.17.92.116) 1.49ms
+[I 161208 16:22:13 web:1946] 200 GET /static/js/ie10-viewport-bug-workaround.js (172.17.92.116) 1.29ms
+[W 161208 16:22:14 web:1946] 404 GET /favicon.ico (172.17.92.116) 8.40ms
+[I 161208 16:22:15 web:1946] 302 POST /login (172.17.92.116) 84.85ms
+[I 161208 16:22:15 web:1946] 200 GET / (172.17.92.116) 19.99ms
+[I 161208 16:22:15 web:1946] 304 GET /static/js/term.js (172.17.92.116) 2.93ms
+[I 161208 16:22:15 web:1946] 304 GET /static/js/ws.js (172.17.92.116) 1.03ms
+[I 161208 16:22:15 web:1946] 304 GET /static/js/formvalid.js (172.17.92.116) 2.21ms
+[I 161208 16:22:15 web:1946] 304 GET /static/js/main.js (172.17.92.116) 2.37ms
+[I 161208 16:22:17 web:1946] 304 GET /host/get/1 (172.17.92.116) 5.69ms
+[I 161208 16:23:22 web:1946] 302 GET / (172.17.92.116) 0.67ms
+[I 161208 16:23:22 web:1946] 200 GET /login?next=%2F (172.17.92.116) 3.22ms
+[I 161208 16:23:22 web:1946] 304 GET /static/css/bootstrap.min.css (172.17.92.116) 2.97ms
+[I 161208 16:23:22 web:1946] 304 GET /static/css/signin.css (172.17.92.116) 2.07ms
+[I 161208 16:23:22 web:1946] 304 GET /static/js/ie-emulation-modes-warning.js (172.17.92.116) 1.36ms
+[I 161208 16:23:22 web:1946] 304 GET /static/js/ie10-viewport-bug-workaround.js (172.17.92.116) 1.43ms
+[I 161208 16:23:33 web:1946] 302 POST /login (172.17.92.116) 54.46ms
+[I 161208 16:23:33 web:1946] 200 GET / (172.17.92.116) 34.53ms
+[I 161208 16:23:33 web:1946] 304 GET /static/js/term.js (172.17.92.116) 2.45ms
+[I 161208 16:23:33 web:1946] 304 GET /static/js/formvalid.js (172.17.92.116) 1.93ms
+[I 161208 16:23:33 web:1946] 304 GET /static/js/main.js (172.17.92.116) 1.24ms
+[I 161208 16:23:33 web:1946] 304 GET /static/js/ws.js (172.17.92.116) 1.40ms
+[I 161208 16:23:34 web:1946] 304 GET /host/get/1 (172.17.92.116) 5.23ms
+[I 161208 16:23:34 web:1946] 304 GET /static/fonts/glyphicons-halflings-regular.woff2 (172.17.92.116) 2.27ms
+[I 161208 16:23:35 web:1946] 304 GET / (172.17.92.116) 17.72ms
+[I 161208 16:23:35 web:1946] 304 GET /static/css/bootstrap.min.css (172.17.92.116) 3.33ms
+[I 161208 16:23:35 web:1946] 304 GET /static/font-awesome/css/font-awesome.min.css (172.17.92.116) 1.33ms
+[I 161208 16:23:35 web:1946] 304 GET /static/css/plugins/morris.css (172.17.92.116) 1.50ms
+[I 161208 16:23:35 web:1946] 304 GET /static/css/sb-admin.css (172.17.92.116) 1.53ms
+[I 161208 16:23:35 web:1946] 304 GET /static/js/jquery.js (172.17.92.116) 1.72ms
+[I 161208 16:23:36 web:1946] 304 GET /static/js/bootstrap.min.js (172.17.92.116) 1.92ms
+[I 161208 16:23:36 web:1946] 304 GET /static/js/plugins/morris/morris.min.js (172.17.92.116) 1.95ms
+[I 161208 16:23:36 web:1946] 304 GET /static/js/plugins/morris/raphael.min.js (172.17.92.116) 1.83ms
+[I 161208 16:23:36 web:1946] 304 GET /static/js/plugins/morris/morris-data.js (172.17.92.116) 1.25ms
+[I 161208 16:23:36 web:1946] 304 GET /static/js/deltaops.js (172.17.92.116) 1.89ms
+[I 161208 16:23:36 web:1946] 304 GET /static/fonts/glyphicons-halflings-regular.woff2 (172.17.92.116) 1.72ms
+[I 161208 16:23:36 web:1946] 304 GET /static/js/term.js (172.17.92.116) 2.43ms
+[I 161208 16:23:36 web:1946] 304 GET /static/js/ws.js (172.17.92.116) 1.92ms
+[I 161208 16:23:36 web:1946] 304 GET /static/js/main.js (172.17.92.116) 1.40ms
+[I 161208 16:23:36 web:1946] 304 GET /static/js/formvalid.js (172.17.92.116) 1.94ms
+[I 161208 16:23:36 web:1946] 304 GET /host/get/1 (172.17.92.116) 7.62ms
+[I 161208 16:23:40 web:1946] 304 GET /actionmanager/owner/host/25 (172.17.92.116) 3.68ms
+[I 161208 17:27:07 web:1946] 304 GET /actionmanager/owner/host/25 (172.17.92.116) 3.28ms
+[I 161208 17:27:25 web:1946] 200 GET /actionmanager/history/32 (172.17.92.116) 3.13ms
+[I 161208 17:27:31 web:1946] 304 GET /actionmanager/history/32 (172.17.92.116) 3.07ms
+[I 161208 17:27:34 web:1946] 200 GET /actionmanager/history/30 (172.17.92.116) 3.87ms
+[I 161208 17:27:36 web:1946] 304 GET /actionmanager/history/32 (172.17.92.116) 3.85ms
+[I 161208 17:31:39 web:1946] 304 GET /host/get/2 (172.17.92.116) 5.17ms
+[I 161208 17:31:42 web:1946] 304 GET /host/get/1 (172.17.92.116) 5.71ms
+[I 161208 17:31:44 web:1946] 304 GET /host/get/2 (172.17.92.116) 5.08ms
+[I 161208 17:31:52 web:1946] 304 GET /host (172.17.92.116) 17.77ms
+[I 161208 17:31:53 web:1946] 304 GET /static/js/term.js (172.17.92.116) 3.30ms
+[I 161208 17:31:53 web:1946] 304 GET /static/js/ws.js (172.17.92.116) 1.29ms
+[I 161208 17:31:53 web:1946] 304 GET /static/js/formvalid.js (172.17.92.116) 1.84ms
+[I 161208 17:31:53 web:1946] 304 GET /static/js/main.js (172.17.92.116) 1.48ms
+[I 161208 17:31:53 web:1946] 304 GET /host/get/1 (172.17.92.116) 4.91ms
+[I 161208 17:31:56 web:1946] 304 GET /group (172.17.92.116) 8.97ms
+[I 161208 17:31:56 web:1946] 304 GET /group/?page=1 (172.17.92.116) 2.97ms
+[I 161208 17:31:57 web:1946] 200 GET /group/?page=2 (172.17.92.116) 4.05ms
+[I 161208 17:31:58 web:1946] 304 GET /group/?page=1 (172.17.92.116) 2.86ms
+[I 161208 17:32:07 web:1946] 200 DELETE /group/ (172.17.92.116) 49.79ms
+[I 161208 17:32:07 web:1946] 200 GET /group/?page=1 (172.17.92.116) 2.94ms
+[I 161208 17:34:50 web:1946] 200 GET /login (172.17.92.116) 3.61ms
+[I 161208 17:34:50 web:1946] 304 GET /static/css/bootstrap.min.css (172.17.92.116) 1.74ms
+[I 161208 17:34:50 web:1946] 304 GET /static/css/signin.css (172.17.92.116) 1.31ms
+[I 161208 17:34:50 web:1946] 304 GET /static/js/ie10-viewport-bug-workaround.js (172.17.92.116) 1.74ms
+[I 161208 17:34:50 web:1946] 304 GET /static/js/ie-emulation-modes-warning.js (172.17.92.116) 1.28ms
+[I 161208 17:34:54 web:1946] 200 GET /login (172.17.92.116) 4.35ms
+[I 161208 17:34:54 web:1946] 304 GET /static/css/bootstrap.min.css (172.17.92.116) 2.59ms
+[I 161208 17:34:54 web:1946] 304 GET /static/js/ie-emulation-modes-warning.js (172.17.92.116) 2.19ms
+[I 161208 17:34:54 web:1946] 304 GET /static/css/signin.css (172.17.92.116) 1.50ms
+[I 161208 17:34:55 web:1946] 304 GET /static/js/ie10-viewport-bug-workaround.js (172.17.92.116) 1.42ms
+[I 161209 09:30:01 web:1946] 304 GET /host (172.17.92.116) 18.34ms
+[I 161209 09:30:01 web:1946] 304 GET /static/js/deltaops.js (172.17.92.116) 2.21ms
+[I 161209 09:30:01 web:1946] 304 GET /static/js/term.js (172.17.92.116) 2.99ms
+[I 161209 09:30:01 web:1946] 304 GET /static/js/ws.js (172.17.92.116) 2.72ms
+[I 161209 09:30:01 web:1946] 304 GET /static/js/formvalid.js (172.17.92.116) 1.21ms
+[I 161209 09:30:01 web:1946] 304 GET /static/js/main.js (172.17.92.116) 1.45ms
+[I 161209 09:30:01 web:1946] 304 GET /host/get/1 (172.17.92.116) 12.10ms
+[I 161209 11:08:22 web:1946] 304 GET /host (172.17.92.116) 21.33ms
+[I 161209 11:08:22 web:1946] 304 GET /host/get/1 (172.17.92.116) 6.24ms
+[I 161209 11:08:23 web:1946] 304 GET /group (172.17.92.116) 16.69ms
+[I 161209 11:08:23 web:1946] 304 GET /group/?page=1 (172.17.92.116) 3.36ms
+[I 161209 11:08:24 web:1946] 304 GET /host (172.17.92.116) 18.07ms
+[I 161209 11:08:25 web:1946] 304 GET /host/get/1 (172.17.92.116) 6.37ms
+[I 161209 11:08:26 web:1946] 304 GET /group (172.17.92.116) 16.24ms
+[I 161209 11:08:26 web:1946] 304 GET /group/?page=1 (172.17.92.116) 3.05ms
+[I 161209 11:25:26 web:1946] 304 GET /group (172.17.92.116) 16.91ms
+[I 161209 11:25:26 web:1946] 304 GET /group/?page=1 (172.17.92.116) 4.18ms
+[I 161209 11:25:31 web:1946] 304 GET /addplaybook (172.17.92.116) 15.48ms
+[I 161209 11:25:31 web:1946] 304 GET /playbookmanager/page/1 (172.17.92.116) 3.72ms
+[I 161209 12:00:41 web:1946] 200 GET /login?next=%2F (172.17.92.116) 2.95ms
+[I 161209 12:00:41 web:1946] 200 GET /static/css/signin.css (172.17.92.116) 2.21ms
+[I 161209 12:00:41 web:1946] 200 GET /static/js/ie-emulation-modes-warning.js (172.17.92.116) 2.59ms
+[I 161209 12:00:41 web:1946] 200 GET /static/js/ie10-viewport-bug-workaround.js (172.17.92.116) 1.82ms
+[I 161209 12:00:41 web:1946] 200 GET /static/css/bootstrap.min.css (172.17.92.116) 21.04ms
+[W 161209 12:00:41 web:1946] 404 GET /favicon.ico (172.17.92.116) 4.11ms
+[I 161209 14:43:11 web:1946] 302 GET / (172.17.92.116) 0.92ms
+[I 161209 14:43:11 web:1946] 200 GET /login?next=%2F (172.17.92.116) 3.99ms
+[I 161209 14:43:11 web:1946] 304 GET /static/css/bootstrap.min.css (172.17.92.116) 2.01ms
+[I 161209 14:43:11 web:1946] 304 GET /static/css/signin.css (172.17.92.116) 2.12ms
+[I 161209 14:43:11 web:1946] 304 GET /static/js/ie-emulation-modes-warning.js (172.17.92.116) 1.46ms
+[I 161209 14:43:11 web:1946] 304 GET /static/js/ie10-viewport-bug-workaround.js (172.17.92.116) 1.17ms
+[W 161209 14:43:12 web:1946] 404 GET /favicon.ico (172.17.92.116) 4.05ms
+[I 161209 14:43:22 web:1946] 302 POST /login (172.17.92.116) 74.45ms
+[I 161209 14:43:22 web:1946] 200 GET / (172.17.92.116) 21.03ms
+[I 161209 14:43:22 web:1946] 200 GET /static/css/sb-admin.css (172.17.92.116) 2.58ms
+[I 161209 14:43:22 web:1946] 200 GET /static/font-awesome/css/font-awesome.min.css (172.17.92.116) 1.93ms
+[I 161209 14:43:22 web:1946] 200 GET /static/css/plugins/morris.css (172.17.92.116) 1.44ms
+[I 161209 14:43:22 web:1946] 200 GET /static/js/jquery.js (172.17.92.116) 2.32ms
+[I 161209 14:43:22 web:1946] 200 GET /static/js/bootstrap.min.js (172.17.92.116) 3.09ms
+[I 161209 14:43:22 web:1946] 200 GET /static/js/plugins/morris/raphael.min.js (172.17.92.116) 4.60ms
+[I 161209 14:43:22 web:1946] 200 GET /static/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0 (172.17.92.116) 3.12ms
+[I 161209 14:43:22 web:1946] 200 GET /static/js/plugins/morris/morris-data.js (172.17.92.116) 2.50ms
+[I 161209 14:43:22 web:1946] 200 GET /static/js/plugins/morris/morris.min.js (172.17.92.116) 2.94ms
+[I 161209 14:43:22 web:1946] 200 GET /static/fonts/glyphicons-halflings-regular.woff2 (172.17.92.116) 2.27ms
+[I 161209 14:43:22 web:1946] 200 GET /static/js/deltaops.js (172.17.92.116) 1.50ms
+[I 161209 14:43:23 web:1946] 200 GET /static/js/ws.js (172.17.92.116) 1.70ms
+[I 161209 14:43:23 web:1946] 200 GET /static/js/formvalid.js (172.17.92.116) 2.27ms
+[I 161209 14:43:23 web:1946] 200 GET /static/js/main.js (172.17.92.116) 2.22ms
+[I 161209 14:43:23 web:1946] 200 GET /static/js/term.js (172.17.92.116) 46.91ms
+[I 161209 14:43:23 web:1946] 200 GET /host/get/1 (172.17.92.116) 5.32ms
+[I 161209 14:43:31 web:1946] 200 GET /argument (172.17.92.116) 16.00ms
+[I 161209 14:43:32 web:1946] 200 GET /argument/page/1 (172.17.92.116) 4.06ms
+[I 161209 16:04:39 web:1946] 304 GET /argument (172.17.92.116) 18.01ms
+[I 161209 16:04:39 web:1946] 304 GET /static/css/bootstrap.min.css (172.17.92.116) 2.64ms
+[I 161209 16:04:39 web:1946] 304 GET /static/css/sb-admin.css (172.17.92.116) 1.71ms
+[I 161209 16:04:39 web:1946] 304 GET /static/font-awesome/css/font-awesome.min.css (172.17.92.116) 1.35ms
+[I 161209 16:04:39 web:1946] 304 GET /static/css/plugins/morris.css (172.17.92.116) 1.35ms
+[I 161209 16:04:39 web:1946] 304 GET /static/js/jquery.js (172.17.92.116) 3.41ms
+[I 161209 16:04:39 web:1946] 304 GET /static/js/plugins/morris/raphael.min.js (172.17.92.116) 2.14ms
+[I 161209 16:04:39 web:1946] 304 GET /static/js/plugins/morris/morris.min.js (172.17.92.116) 2.38ms
+[I 161209 16:04:39 web:1946] 304 GET /static/js/bootstrap.min.js (172.17.92.116) 2.24ms
+[I 161209 16:04:39 web:1946] 304 GET /static/js/deltaops.js (172.17.92.116) 1.26ms
+[I 161209 16:04:39 web:1946] 304 GET /static/js/plugins/morris/morris-data.js (172.17.92.116) 1.33ms
+[I 161209 16:04:39 web:1946] 304 GET /static/fonts/glyphicons-halflings-regular.woff2 (172.17.92.116) 1.48ms
+[I 161209 16:04:39 web:1946] 304 GET /argument/page/1 (172.17.92.116) 3.73ms
+[I 161212 09:32:14 web:1946] 304 GET /addplaybook (172.17.92.116) 36.91ms
+[I 161212 09:32:14 web:1946] 304 GET /static/js/deltaops.js (172.17.92.116) 1.90ms
+['username', '_xsrf', 'password']
+wentong.li@deltaww.com
+Delta123.
+6019256766b1378153935458a2fb184f
+6019256766b1378153935458a2fb184f
+debug
+['username', '_xsrf', 'password']
+wentong.li@deltaww.com
+Delta123.
+6019256766b1378153935458a2fb184f
+6019256766b1378153935458a2fb184f
+debug
+host
+host
+<type 'int'>
+<type 'int'>
+<type 'int'>
+<type 'int'>
+<type 'int'>
+<type 'int'>
+<type 'int'>
+['16', 'START_M4', 'Service', 'wentong', 'wentong', '2016-12-05 13:38:13', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['17', 'Start_Vln_Group_Vlnserver', 'Service', 'wentong', 'Start the vln server for Group vlnserver', '2016-12-06 09:57:45', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['18', 'Restart_Supervisorctl_APP', 'Service', 'wentong', 'Restart  supervicsoctl app', '2016-12-06 14:03:30', '---\n- hosts: "{{ hosts }}"\n  tasks:\n  - name: Restart The App\n    shell: supervisorctl restart "{{ appname }}"\n...']
+['19', 'Start_M4_Server', 'Service', 'wentong', 'Start the m4 server no only any one server', '2016-12-06 14:15:55', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n    - show pid\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n    - name: show pid\n      shell: ./{{server}}/run show chdir={{project}}/{{serviceroot}}\n...']
+['20', 'Stop_M4_Server', 'Service', 'wentong.li', 'Stop the M4 Server no only any one server.', '2016-12-06 14:31:03', '---\n- hosts:  "{{hosts}}"\n  tasks:\n  - name: check if have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc stop service monitor\n    shell:  svc -dk  "{{server}}"  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - kill service\n  handlers:\n    - name: kill service \n      shell: ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['21', 'Restart_Elastic', 'Service', 'wentong', 'Restart the Elasticsearch service', '2016-12-08 14:55:38', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n\n  - name: Kill Elastic Process\n    shell:  kill -9 `ps aux |grep bootstrap.Elasticsearch | grep -v grep | awk -F \' \' \'{print $2}\'`\n\n  - name: Start Elasticsearch \n    shell:  nohup ./bin/elasticsearch  chdir={{ softpath }}\n  \n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n...']
+['username', '_xsrf', 'password']
+wentong.li@deltaww.com
+Delta123.
+6019256766b1378153935458a2fb184f
+6019256766b1378153935458a2fb184f
+debug
+['16', 'START_M4', 'Service', 'wentong', 'wentong', '2016-12-05 13:38:13', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      she[I 161212 09:32:15 web:1946] 304 GET /playbookmanager/page/1 (172.17.92.116) 3.80ms
+[I 161212 09:32:35 web:1946] 304 GET /argument (172.17.92.116) 34.87ms
+[I 161212 09:32:36 web:1946] 304 GET /argument/page/1 (172.17.92.116) 3.75ms
+[I 161212 09:32:40 web:1946] 304 GET /argument/page/2 (172.17.92.116) 3.14ms
+[I 161212 09:32:41 web:1946] 304 GET /argument/page/1 (172.17.92.116) 3.26ms
+[I 161212 09:32:42 web:1946] 304 GET /argument/page/2 (172.17.92.116) 4.00ms
+[I 161212 09:32:46 web:1946] 304 GET /argument/page/1 (172.17.92.116) 3.87ms
+[I 161212 09:34:52 web:1946] 200 POST /argument/id/ (172.17.92.116) 113.16ms
+[I 161212 09:34:52 web:1946] 304 GET /argument/page/1 (172.17.92.116) 3.58ms
+[I 161212 09:34:54 web:1946] 200 GET /argument/page/2 (172.17.92.116) 3.48ms
+[I 161212 09:35:40 web:1946] 304 GET /argument/page/1 (172.17.92.116) 3.67ms
+[I 161212 09:35:48 web:1946] 304 GET /argument/page/2 (172.17.92.116) 2.39ms
+[I 161212 09:35:52 web:1946] 200 DELETE /argument/id/22 (172.17.92.116) 21.38ms
+[I 161212 09:35:58 web:1946] 304 GET /argument (172.17.92.116) 19.61ms
+[I 161212 09:35:59 web:1946] 304 GET /argument/page/1 (172.17.92.116) 4.16ms
+[I 161212 09:36:00 web:1946] 304 GET /argument/page/2 (172.17.92.116) 4.00ms
+[I 161212 09:36:05 web:1946] 200 DELETE /argument/id/24 (172.17.92.116) 7.30ms
+[I 161212 09:36:05 web:1946] 200 GET /argument/page/2 (172.17.92.116) 3.12ms
+[I 161212 09:36:09 web:1946] 304 GET /argument/page/1 (172.17.92.116) 3.53ms
+[I 161212 09:36:55 web:1946] 200 POST /argument/id/ (172.17.92.116) 24.01ms
+[I 161212 09:36:55 web:1946] 304 GET /argument/page/1 (172.17.92.116) 3.28ms
+[I 161212 09:36:56 web:1946] 200 GET /argument/page/2 (172.17.92.116) 3.23ms
+main.py:1071: Warning: Data truncated for column 'author' at row 1
+  cur.execute(sql)
+[I 161212 09:37:23 web:1946] 200 POST /argument/id/ (172.17.92.116) 59.77ms
+[I 161212 09:37:23 web:1946] 200 GET /argument/page/2 (172.17.92.116) 3.31ms
+[I 161212 09:37:36 web:1946] 200 DELETE /argument/id/22 (172.17.92.116) 4.92ms
+[I 161212 09:37:39 web:1946] 304 GET /argument (172.17.92.116) 15.38ms
+[I 161212 09:37:39 web:1946] 304 GET /argument/page/1 (172.17.92.116) 3.67ms
+[I 161212 09:37:40 web:1946] 304 GET /argument/page/2 (172.17.92.116) 3.35ms
+[I 161212 09:37:42 web:1946] 200 DELETE /argument/id/26 (172.17.92.116) 8.28ms
+[I 161212 09:37:42 web:1946] 200 GET /argument/page/2 (172.17.92.116) 3.22ms
+[I 161212 09:38:29 web:1946] 200 POST /argument/id/ (172.17.92.116) 92.97ms
+[I 161212 09:38:29 web:1946] 200 GET /argument/page/2 (172.17.92.116) 3.29ms
+[I 161212 09:39:15 web:1946] 200 POST /argument/id/ (172.17.92.116) 158.87ms
+[I 161212 09:39:15 web:1946] 200 GET /argument/page/2 (172.17.92.116) 1.97ms
+ll:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['17', 'Start_Vln_Group_Vlnserver', 'Service', 'wentong', 'Start the vln server for Group vlnserver', '2016-12-06 09:57:45', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['18', 'Restart_Supervisorctl_APP', 'Service', 'wentong', 'Restart  supervicsoctl app', '2016-12-06 14:03:30', '---\n- hosts: "{{ hosts }}"\n  tasks:\n  - name: Restart The App\n    shell: supervisorctl restart "{{ appname }}"\n...']
+['19', 'Start_M4_Server', 'Service', 'wentong', 'Start the m4 server no only any one server', '2016-12-06 14:15:55', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n    - show pid\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n    - name: show pid\n      shell: ./{{server}}/run show chdir={{project}}/{{serviceroot}}\n...']
+['20', 'Stop_M4_Server', 'Service', 'wentong.li', 'Stop the M4 Server no only any one server.', '2016-12-06 14:31:03', '---\n- hosts:  "{{hosts}}"\n  tasks:\n  - name: check if have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc stop service monitor\n    shell:  svc -dk  "{{server}}"  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - kill service\n  handlers:\n    - name: kill service \n      shell: ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['21', 'Restart_Elastic', 'Service', 'wentong', 'Restart the Elasticsearch service', '2016-12-08 14:55:38', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n\n  - name: Kill Elastic Process\n    shell:  kill -9 `ps aux |grep bootstrap.Elasticsearch | grep -v grep | awk -F \' \' \'{print $2}\'`\n\n  - name: Start Elasticsearch \n    shell:  nohup ./bin/elasticsearch  chdir={{ softpath }}\n  \n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n...']
+INSERT INTO Argument (note,author,dependence,keyvalue,name,updatetime)VALUES("Start the M4 AAS Server for aas_group","wentong","","{\"project\":\"/data/M4-Product/app\",\"serviceroot\":\"server\",\"server\":\"aasserver\"}","Start_M4_AAS_Group","2016-12-12 09:34:52")
+INSERT INTO Argument (note,author,dependence,keyvalue,name,updatetime)VALUES("M4 AAS server for Group:aas_group","wentong","","{\"project\":\"/data/M4-Product/app\",\"serviceroot\":\"server\",\"server\":\"aasserver\"}","M4_AAS_Group","2016-12-12 09:36:55")
+INSERT INTO Argument (note,author,dependence,keyvalue,name,updatetime)VALUES("wentong","M4 AAS server for Group:aas_group","","{\"project\":\"/data/M4-Product/app\",\"serviceroot\":\"server\",\"server\":\"lbserver\"}","M4 LBS server for Group:lbs_group","2016-12-12 09:37:23")
+INSERT INTO Argument (note,author,dependence,keyvalue,name,updatetime)VALUES("M4 LBS server for Group:aas_group","wentong","","{\"project\":\"/data/M4-Product/app\",\"serviceroot\":\"server\",\"server\":\"lbserver\"}","M4_LBS_Group","2016-12-12 09:38:29")
+INSERT INTO Argument (note,author,dependence,keyvalue,name,updatetime)VALUES("M4 CMS server for Group:aas_group","wentong","","{\"project\":\"/data/M4-Product/app\",\"serviceroot\":\"server\",\"server\":\"cmserver\"}","M4_CMS_Group","2016-12-12 09:39:15")
+INSERT INTO Argument (note,author,dependence,keyvalue,name,updatetime)VALUES("M4 UPLOADS server f[I 161212 09:39:58 web:1946] 200 POST /argument/id/ (172.17.92.116) 42.54ms
+[I 161212 09:39:58 web:1946] 200 GET /argument/page/2 (172.17.92.116) 3.74ms
+[I 161212 09:40:50 web:1946] 200 POST /argument/id/ (172.17.92.116) 55.48ms
+[I 161212 09:40:50 web:1946] 200 GET /argument/page/2 (172.17.92.116) 3.01ms
+[I 161212 09:43:11 web:1946] 304 GET /host (172.17.92.116) 36.97ms
+[I 161212 09:43:11 web:1946] 304 GET /static/js/term.js (172.17.92.116) 3.58ms
+[I 161212 09:43:11 web:1946] 304 GET /static/js/ws.js (172.17.92.116) 1.00ms
+[I 161212 09:43:11 web:1946] 304 GET /static/js/formvalid.js (172.17.92.116) 1.07ms
+[I 161212 09:43:11 web:1946] 304 GET /static/js/main.js (172.17.92.116) 54.20ms
+[I 161212 09:43:12 web:1946] 304 GET /host/get/1 (172.17.92.116) 6.22ms
+[I 161212 09:43:21 transport:1386] Connected (version 2.0, client OpenSSH_6.6.1p1)
+[I 161212 09:43:21 transport:1386] Authentication (publickey) successful!
+[I 161212 09:43:23 transport:1386] Secsh channel 1 opened.
+[I 161212 09:43:23 handlers:50] connection established from: 51805392
+[I 161212 09:43:30 web:1946] 304 GET /argument (172.17.92.116) 15.96ms
+[I 161212 09:43:30 handlers:60] client close the connection: 51805392
+[I 161212 09:43:30 web:1946] 304 GET /argument/page/1 (172.17.92.116) 3.82ms
+[I 161212 09:43:32 web:1946] 304 GET /argument/page/2 (172.17.92.116) 3.32ms
+[I 161212 09:43:48 web:1946] 200 GET /argument/page/3 (172.17.92.116) 2.75ms
+[I 161212 09:43:49 web:1946] 304 GET /argument/page/2 (172.17.92.116) 3.49ms
+[I 161212 09:44:28 web:1946] 200 POST /argument/id/ (172.17.92.116) 77.99ms
+[I 161212 09:44:28 web:1946] 200 GET /argument/page/2 (172.17.92.116) 3.30ms
+[I 161212 09:44:31 web:1946] 304 GET /action (172.17.92.116) 15.55ms
+[I 161212 09:44:31 web:1946] 304 GET /host/all (172.17.92.116) 2.95ms
+[I 161212 09:44:31 web:1946] 200 GET /group/all (172.17.92.116) 2.96ms
+[I 161212 09:44:31 web:1946] 304 GET /playbookmanager/all/ (172.17.92.116) 3.36ms
+[I 161212 09:44:31 web:1946] 304 GET /actionmanager/page/1 (172.17.92.116) 4.31ms
+[I 161212 09:44:31 web:1946] 200 GET /argument/all/ (172.17.92.116) 3.82ms
+[I 161212 09:45:22 web:1946] 304 GET /group (172.17.92.116) 16.54ms
+[I 161212 09:45:22 web:1946] 304 GET /group/?page=1 (172.17.92.116) 3.40ms
+[I 161212 09:45:33 web:1946] 200 POST /group/ (172.17.92.116) 52.44ms
+[I 161212 09:45:33 web:1946] 200 GET /group/?page=1 (172.17.92.116) 3.54ms
+[I 161212 09:45:44 web:1946] 200 POST /group/ (172.17.92.116) 48.85ms
+[I 161212 09:45:44 web:1946] 200 GET /group/?page=1 (172.17.92.116) 2.61ms
+[I 161212 09:45:52 web:1946] 200 POST /group/ (172.17.92.116) 23.88ms
+[I 161212 09:45:52 web:1946] 200 GET /group/?page=1 (172.17.92.116) 2.54ms
+[I 161212 09:46:06 web:1946] 200 POST /group/ (172.17.92.116) 100.50ms
+[I 161212 09:46:06 web:1946] 200 GET /group/?page=1 (172.17.92.116) 2.86ms
+[I 161212 09:46:17 web:1946] 200 POST /group/ (172.17.92.116) 54.80ms
+[I 161212 09:46:17 web:1946] 200 GET /group/?page=1 (172.17.92.116) 3.64ms
+[I 161212 09:46:23 web:1946] 200 GET /group/?page=2 (172.17.92.116) 3.60ms
+or Group:uploads_group","wentong","","{\"project\":\"/data/M4-Product/app\",\"serviceroot\":\"server\",\"server\":\"upload\"}","M4_Uploads_Group","2016-12-12 09:39:58")
+INSERT INTO Argument (note,author,dependence,keyvalue,name,updatetime)VALUES("M4 Alarm server for Group:uploads_group","wentong","","{\"project\":\"/data/M4-Product/app\",\"serviceroot\":\"server\",\"server\":\"alarmserver\"}","M4_Alarm_Group","2016-12-12 09:40:50")
+INSERT INTO Argument (note,author,dependence,keyvalue,name,updatetime)VALUES("M4 License server for Group:lcs_group","wentong","","{\"project\":\"/data/M4-Product/app\",\"serviceroot\":\"server\",\"server\":\"lcserver\"}","M4_LCS_Group","2016-12-12 09:44:28")
+{'status': 'success', 'data': {1L: [1L, 'TestServer'], 3L: [3L, 'vlndhcp'], 4L: [4L, 'alarmserver'], 5L: [5L, 'asiserver'], 11L: [11L, 'VLN_GROUP'], 12L: [12L, 'M4_LBServer']}}
+['16', 'START_M4', 'Service', 'wentong', 'wentong', '2016-12-05 13:38:13', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['17', 'Start_Vln_Group_Vlnserver', 'Service', 'wentong', 'Start the vln server for Group vlnserver', '2016-12-06 09:57:45', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['18', 'Restart_Supervisorctl_APP', 'Service', 'wentong', 'Restart  supervicsoctl app', '2016-12-06 14:03:30', '---\n- hosts: "{{ hosts }}"\n  tasks:\n  - name: Restart The App\n    shell: supervisorctl restart "{{ appname }}"\n...']
+['19', 'Start_M4_Server', 'Service', 'wentong', 'Start the m4 server no only any one server', '2016-12-06 14:15:55', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n    - show pid\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n    - name: show pid\n      shell: ./{{server}}/run show chdir={{project}}/{{serviceroot}}\n...']
+['20', 'Stop_M4_Server', 'Service', 'wentong.li', 'Stop the M4 Server no only any one server.', '2016-12-06 14:31:03', '---\n- hosts:  "{{hosts}}"\n  tasks:\n  - name: check if have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc stop service monitor\n    shell:  svc -dk  "{{server}}"  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - kill service\n  handlers:\n    - name: kill service \n      shell: ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['21', 'Restart_Elastic', 'Service', 'wentong', 'Restart the Elasticsearch service', '2016-12-08 14:55:38', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n\n  - name: Kill Elastic Process\n    shell:  kill -9 `ps aux |grep bootstrap.Elasticsearch | grep -v grep | awk -F \' \' \'{print $2}\'`\n\n  - name: Start Elasticsearch \n    shell:  nohup ./bin/elasticsearch  chdir={{ softpath }}\n  \n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n...']
+<type 'int'>
+<type 'int'>
+<type 'int'>
+<type 'int'>
+<type 'int'>
+<type 'int'>
+<type 'int'>
+[I 161212 09:46:25 web:1946] 304 GET /group/?page=1 (172.17.92.116) 3.41ms
+[I 161212 09:46:59 web:1946] 200 POST /group/ (172.17.92.116) 37.30ms
+[I 161212 09:46:59 web:1946] 200 GET /group/?page=1 (172.17.92.116) 3.79ms
+[I 161212 09:47:17 web:1946] 200 POST /group/ (172.17.92.116) 251.02ms
+[I 161212 09:47:17 web:1946] 304 GET /group/?page=1 (172.17.92.116) 3.49ms
+[I 161212 09:47:25 web:1946] 200 POST /group/ (172.17.92.116) 28.08ms
+[I 161212 09:47:25 web:1946] 200 GET /group/?page=1 (172.17.92.116) 4.30ms
+[I 161212 09:47:38 web:1946] 304 GET /action (172.17.92.116) 17.26ms
+[I 161212 09:47:38 web:1946] 304 GET /host/all (172.17.92.116) 5.11ms
+[I 161212 09:47:38 web:1946] 304 GET /actionmanager/page/1 (172.17.92.116) 3.88ms
+[I 161212 09:47:38 web:1946] 304 GET /playbookmanager/all/ (172.17.92.116) 4.25ms
+[I 161212 09:47:38 web:1946] 200 GET /group/all (172.17.92.116) 2.45ms
+[I 161212 09:47:38 web:1946] 304 GET /argument/all/ (172.17.92.116) 4.02ms
+[I 161212 09:48:45 web:1946] 200 POST /actionmanager/id/ (172.17.92.116) 27.04ms
+[I 161212 09:48:45 web:1946] 200 GET /actionmanager/page/1 (172.17.92.116) 5.29ms
+[I 161212 09:49:06 web:1946] 200 POST /actionmanager/id/ (172.17.92.116) 47.42ms
+[I 161212 09:49:06 web:1946] 200 GET /actionmanager/page/1 (172.17.92.116) 4.87ms
+[I 161212 09:49:48 web:1946] 200 POST /actionmanager/id/ (172.17.92.116) 138.25ms
+[I 161212 09:49:48 web:1946] 200 GET /actionmanager/page/1 (172.17.92.116) 5.25ms
+[I 161212 09:50:49 web:1946] 200 POST /actionmanager/id/ (172.17.92.116) 64.43ms
+[I 161212 09:50:49 web:1946] 200 GET /actionmanager/page/1 (172.17.92.116) 5.48ms
+[I 161212 09:52:07 web:1946] 200 POST /actionmanager/id/ (172.17.92.116) 65.54ms
+[I 161212 09:52:08 web:1946] 200 GET /actionmanager/page/1 (172.17.92.116) 5.22ms
+[I 161212 09:52:29 web:1946] 200 POST /actionmanager/id/ (172.17.92.116) 7.89ms
+[I 161212 09:52:29 web:1946] 200 GET /actionmanager/page/1 (172.17.92.116) 5.60ms
+[I 161212 09:53:05 web:1946] 200 POST /actionmanager/id/ (172.17.92.116) 72.71ms
+[I 161212 09:53:05 web:1946] 200 GET /actionmanager/page/1 (172.17.92.116) 6.27ms
+[I 161212 09:53:44 web:1946] 200 POST /actionmanager/id/ (172.17.92.116) 63.33ms
+[I 161212 09:53:45 web:1946] 304 GET /actionmanager/page/1 (172.17.92.116) 5.94ms
+[I 161212 09:54:45 web:1946] 200 POST /actionmanager/id/ (172.17.92.116) 69.06ms
+[I 161212 09:54:45 web:1946] 304 GET /actionmanager/page/1 (172.17.92.116) 5.92ms
+[I 161212 09:54:50 web:1946] 304 GET /action (172.17.92.116) 17.12ms
+[I 161212 09:54:51 web:1946] 304 GET /host/all (172.17.92.116) 4.22ms
+<type 'int'>
+<type 'int'>
+<type 'int'>
+<type 'int'>
+['16', 'START_M4', 'Service', 'wentong', 'wentong', '2016-12-05 13:38:13', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['17', 'Start_Vln_Group_Vlnserver', 'Service', 'wentong', 'Start the vln server for Group vlnserver', '2016-12-06 09:57:45', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['18', 'Restart_Supervisorctl_APP', 'Service', 'wentong', 'Restart  supervicsoctl app', '2016-12-06 14:03:30', '---\n- hosts: "{{ hosts }}"\n  tasks:\n  - name: Restart The App\n    shell: supervisorctl restart "{{ appname }}"\n...']
+['19', 'Start_M4_Server', 'Service', 'wentong', 'Start the m4 server no only any one server', '2016-12-06 14:15:55', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n    - show pid\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n    - name: show pid\n      shell: ./{{server}}/run show chdir={{project}}/{{serviceroot}}\n...']
+['20', 'Stop_M4_Server', 'Service', 'wentong.li', 'Stop the M4 Server no only any one server.', '2016-12-06 14:31:03', '---\n- hosts:  "{{hosts}}"\n  tasks:\n  - name: check if have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc stop service monitor\n    shell:  svc -dk  "{{server}}"  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - kill service\n  handlers:\n    - name: kill service \n      shell: ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['21', 'Restart_Elastic', 'Service', 'wentong', 'Restart the Elasticsearch service', '2016-12-08 14:55:38', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n\n  - name: Kill Elastic Process\n    shell:  kill -9 `ps aux |grep bootstrap.Elasticsearch | grep -v grep | awk -F \' \' \'{print $2}\'`\n\n  - name: Start Elasticsearch \n    shell:  nohup ./bin/elasticsearch  chdir={{ softpath }}\n  \n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n...']
+{'status': 'success', 'data': {1L: [1L, 'TestServer'], 3L: [3L, 'vlndhcp'], 4L: [4L, 'alarmserver'], 5L: [5L, 'asiserver'], 11L: [11L, 'VLN_GROUP'], 12L: [12L, 'M4_LBServer'], 13L: [13L, 'AAS_Group'], 14L: [14L, 'LBS_Group'], 15L: [15L, 'CMS_Group'], 16L: [16L, 'UPLOAD_Group'], 17L: [17L, 'ALARM_Group'], 18L: [18L, 'LCS_Group'], 19L: [19L, 'VLNDHCP_Group'], 20L: [20L, 'Firewall_Group']}}
+DEBUG ACTION POST
+DEBUG ACTION POST
+DEBUG ACTION POST
+DEBUG ACTION POST
+DEBUG ACTION POST
+DEBUG ACTION POST
+DEBUG ACTION POST
+DEBUG ACTION POST
+DEBUG ACTION POST
+{'status': 'success', 'data': {1L: [1L, 'TestServer'], 3L: [3L, 'vlndhcp'], 4L: [4L, 'alarmserver'], 5L: [5L, 'asiserver'], 11L: [11L, 'VLN_GROUP'], 12L: [12L, 'M4_LBServer'], 13L: [13L, 'AAS_Group'], 14L: [14L, 'LBS_Group'], 15L: [15L, 'CMS_Group'], 16L: [16L, 'UPLOAD_Group'], 17L: [17L, 'ALARM_Group'], 18L: [18L, 'LCS_Group'], 19L: [19L, 'VLNDHCP_Group'],[I 161212 09:54:51 web:1946] 304 GET /group/all (172.17.92.116) 3.64ms
+[I 161212 09:54:51 web:1946] 304 GET /playbookmanager/all/ (172.17.92.116) 3.21ms
+[I 161212 09:54:51 web:1946] 304 GET /argument/all/ (172.17.92.116) 3.45ms
+[I 161212 09:54:51 web:1946] 304 GET /actionmanager/page/1 (172.17.92.116) 4.87ms
+[W 161212 09:54:59 web:1946] 404 GET /static/css/bootstrap.min.css.map (172.17.92.116) 3.45ms
+[I 161212 09:57:48 web:1946] 200 GET /action (172.17.92.116) 16.98ms
+[I 161212 09:57:48 web:1946] 304 GET /host/all (172.17.92.116) 3.89ms
+[I 161212 09:57:48 web:1946] 304 GET /actionmanager/page/1 (172.17.92.116) 6.07ms
+[I 161212 09:57:48 web:1946] 304 GET /argument/all/ (172.17.92.116) 3.81ms
+ 20L: [20L, 'Firewall_Group']}}
+['16', 'START_M4', 'Service', 'wentong', 'wentong', '2016-12-05 13:38:13', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['17', 'Start_Vln_Group_Vlnserver', 'Service', 'wentong', 'Start the vln server for Group vlnserver', '2016-12-06 09:57:45', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['18', 'Restart_Supervisorctl_APP', 'Service', 'wentong', 'Restart  supervicsoctl app', '2016-12-06 14:03:30', '---\n- hosts: "{{ hosts }}"\n  tasks:\n  - name: Restart The App\n    shell: supervisorctl restart "{{ appname }}"\n...']
+['19', 'Start_M4_Server', 'Service', 'wentong', 'Start the m4 server no only any one server', '2016-12-06 14:15:55', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n    - show pid\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n    - name: show pid\n      shell: ./{{server}}/run show chdir={{project}}/{{serviceroot}}\n...']
+['20', 'Stop_M4_Server', 'Service', 'wentong.li', 'Stop the M4 Server no only any one server.', '2016-12-06 14:31:03', '---\n- hosts:  "{{hosts}}"\n  tasks:\n  - name: check if have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc stop service monitor\n    shell:  svc -dk  "{{server}}"  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - kill service\n  handlers:\n    - name: kill service \n      shell: ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['21', 'Restart_Elastic', 'Service', 'wentong', 'Restart the Elasticsearch service', '2016-12-08 14:55:38', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n\n  - name: Kill Elastic Process\n    shell:  kill -9 `ps aux |grep bootstrap.Elasticsearch | grep -v grep | awk -F \' \' \'{print $2}\'`\n\n  - name: Start Elasticsearch \n    shell:  nohup ./bin/elasticsearch  chdir={{ softpath }}\n  \n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n...']
+['16', 'START_M4', 'Service', 'wentong', 'wentong', '2016-12-05 13:38:13', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['17', 'Start_Vln_Group_Vlnserver', 'Service', 'wentong', 'Start the vln server for Group vlnserver', '2016-12-06 09:57:45', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notif[I 161212 09:57:48 web:1946] 304 GET /playbookmanager/all/ (172.17.92.116) 3.02ms
+[I 161212 09:57:48 web:1946] 304 GET /group/all (172.17.92.116) 4.40ms
+[I 161212 09:57:50 web:1946] 200 GET /actionmanager/page/2 (172.17.92.116) 57.32ms
+[I 161212 09:57:57 web:1946] 304 GET /actionmanager/page/1 (172.17.92.116) 6.34ms
+[I 161212 09:58:02 web:1946] 304 GET /actionmanager/page/2 (172.17.92.116) 4.39ms
+[I 161212 09:58:07 web:1946] 200 DELETE /actionmanager/id/42 (172.17.92.116) 58.93ms
+[I 161212 09:58:07 web:1946] 200 GET /actionmanager/page/2 (172.17.92.116) 3.14ms
+[I 161212 09:58:31 web:1946] 200 POST /actionmanager/id/ (172.17.92.116) 42.33ms
+[I 161212 09:58:31 web:1946] 200 GET /actionmanager/page/2 (172.17.92.116) 3.57ms
+[I 161212 09:58:37 web:1946] 200 GET /actionmanager/page/1 (172.17.92.116) 7.05ms
+[I 161212 09:59:04 web:1946] 200 POST /actionmanager/id/ (172.17.92.116) 79.38ms
+[I 161212 09:59:04 web:1946] 304 GET /actionmanager/page/1 (172.17.92.116) 6.45ms
+[I 161212 09:59:09 web:1946] 200 GET /actionmanager/page/2 (172.17.92.116) 4.87ms
+[I 161212 09:59:26 web:1946] 304 GET /actionmanager/page/1 (172.17.92.116) 7.60ms
+[I 161212 09:59:28 web:1946] 304 GET /action (172.17.92.116) 23.94ms
+[I 161212 09:59:28 web:1946] 304 GET /host/all (172.17.92.116) 4.69ms
+[I 161212 09:59:28 web:1946] 304 GET /actionmanager/page/1 (172.17.92.116) 6.05ms
+[I 161212 09:59:28 web:1946] 304 GET /argument/all/ (172.17.92.116) 3.62ms
+y:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['18', 'Restart_Supervisorctl_APP', 'Service', 'wentong', 'Restart  supervicsoctl app', '2016-12-06 14:03:30', '---\n- hosts: "{{ hosts }}"\n  tasks:\n  - name: Restart The App\n    shell: supervisorctl restart "{{ appname }}"\n...']
+['19', 'Start_M4_Server', 'Service', 'wentong', 'Start the m4 server no only any one server', '2016-12-06 14:15:55', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n    - show pid\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n    - name: show pid\n      shell: ./{{server}}/run show chdir={{project}}/{{serviceroot}}\n...']
+['20', 'Stop_M4_Server', 'Service', 'wentong.li', 'Stop the M4 Server no only any one server.', '2016-12-06 14:31:03', '---\n- hosts:  "{{hosts}}"\n  tasks:\n  - name: check if have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc stop service monitor\n    shell:  svc -dk  "{{server}}"  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - kill service\n  handlers:\n    - name: kill service \n      shell: ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['21', 'Restart_Elastic', 'Service', 'wentong', 'Restart the Elasticsearch service', '2016-12-08 14:55:38', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n\n  - name: Kill Elastic Process\n    shell:  kill -9 `ps aux |grep bootstrap.Elasticsearch | grep -v grep | awk -F \' \' \'{print $2}\'`\n\n  - name: Start Elasticsearch \n    shell:  nohup ./bin/elasticsearch  chdir={{ softpath }}\n  \n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n...']
+{'status': 'success', 'data': {1L: [1L, 'TestServer'], 3L: [3L, 'vlndhcp'], 4L: [4L, 'alarmserver'], 5L: [5L, 'asiserver'], 11L: [11L, 'VLN_GROUP'], 12L: [12L, 'M4_LBServer'], 13L: [13L, 'AAS_Group'], 14L: [14L, 'LBS_Group'], 15L: [15L, 'CMS_Group'], 16L: [16L, 'UPLOAD_Group'], 17L: [17L, 'ALARM_Group'], 18L: [18L, 'LCS_Group'], 19L: [19L, 'VLNDHCP_Group'], 20L: [20L, 'Firewall_Group']}}
+DEBUG ACTION POST
+DEBUG ACTION POST
+['16', 'START_M4', 'Service', 'wentong', 'wentong', '2016-12-05 13:38:13', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['17', 'Start_Vln_Group_Vlnserver', 'Service', 'wentong', 'Start the vln server for Group vlnserver', '2016-12-06 09:57:45', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['18', 'Restart_Supervisorctl_APP', 'Service', 'wentong', 'Restart  supervicsoctl app', '2016-12-06 14:03:30', '---\n- hosts: "{{ hosts }}"\n  tasks:\n  - name: Restart The App\n    shell: supervisorctl restart "{{ appname }}"\n...']
+['19', 'Start_M4_Server', 'Service', 'wentong', 'Start the m4 server no only any one server', '2016-12-06 14:15:55', '---\n- hosts: "{{hosts}}"\n  tasks:\n[I 161212 09:59:28 web:1946] 304 GET /playbookmanager/all/ (172.17.92.116) 4.31ms
+[I 161212 09:59:28 web:1946] 304 GET /group/all (172.17.92.116) 2.83ms
+[I 161212 09:59:32 web:1946] 304 GET /actionmanager/page/2 (172.17.92.116) 5.25ms
+[I 161212 09:59:35 web:1946] 304 GET /actionmanager/page/1 (172.17.92.116) 6.32ms
+[I 161212 09:59:39 web:1946] 304 GET /actionmanager/page/2 (172.17.92.116) 7.71ms
+[I 161212 09:59:45 web:1946] 304 GET /actionmanager/page/1 (172.17.92.116) 6.17ms
+[I 161212 09:59:49 web:1946] 304 GET /actionmanager/page/2 (172.17.92.116) 4.24ms
+[I 161212 09:59:59 web:1946] 304 GET /actionmanager/page/1 (172.17.92.116) 5.49ms
+[I 161212 10:00:07 web:1946] 304 GET /actionmanager/page/2 (172.17.92.116) 5.03ms
+[I 161212 10:01:02 web:1946] 304 GET /argument (172.17.92.116) 14.29ms
+[I 161212 10:01:02 web:1946] 304 GET /argument/page/1 (172.17.92.116) 4.00ms
+[I 161212 10:01:43 web:1946] 302 GET /argument (172.17.92.116) 0.93ms
+[I 161212 10:01:43 web:1946] 200 GET /login?next=%2Fargument (172.17.92.116) 2.95ms
+[I 161212 10:01:43 web:1946] 200 GET /static/css/signin.css (172.17.92.116) 2.04ms
+[I 161212 10:01:43 web:1946] 200 GET /static/js/ie-emulation-modes-warning.js (172.17.92.116) 1.55ms
+[I 161212 10:01:43 web:1946] 200 GET /static/js/ie10-viewport-bug-workaround.js (172.17.92.116) 2.06ms
+[I 161212 10:01:43 web:1946] 200 GET /static/css/bootstrap.min.css (172.17.92.116) 123.83ms
+[W 161212 10:01:43 web:1946] 404 GET /favicon.ico (172.17.92.116) 4.19ms
+[I 161212 10:32:00 web:1946] 302 POST /login (172.17.92.116) 44.28ms
+[I 161212 10:32:00 web:1946] 200 GET / (172.17.92.116) 18.80ms
+[I 161212 10:32:00 web:1946] 200 GET /static/css/sb-admin.css (172.17.92.116) 2.02ms
+[I 161212 10:32:00 web:1946] 200 GET /static/css/plugins/morris.css (172.17.92.116) 1.49ms
+[I 161212 10:32:00 web:1946] 200 GET /static/font-awesome/css/font-awesome.min.css (172.17.92.116) 1.93ms
+[I 161212 10:32:00 web:1946] 200 GET /static/js/jquery.js (172.17.92.116) 2.86ms
+[I 161212 10:32:00 web:1946] 200 GET /static/js/bootstrap.min.js (172.17.92.116) 7.20ms
+[I 161212 10:32:00 web:1946] 200 GET /static/js/plugins/morris/raphael.min.js (172.17.92.116) 3.18ms
+[I 161212 10:32:01 web:1946] 200 GET /static/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0 (172.17.92.116) 3.67ms
+[I 161212 10:32:01 web:1946] 200 GET /static/fonts/glyphicons-halflings-regular.woff2 (172.17.92.116) 2.93ms
+[I 161212 10:32:01 web:1946] 200 GET /static/js/plugins/morris/morris.min.js (172.17.92.116) 2.85ms
+[I 161212 10:32:01 web:1946] 200 GET /static/js/plugins/morris/morris-data.js (172.17.92.116) 2.21ms
+[I 161212 10:32:01 web:1946] 200 GET /static/js/deltaops.js (172.17.92.116) 1.44ms
+[I 161212 10:32:01 web:1946] 200 GET /static/js/ws.js (172.17.92.116) 3.53ms
+[I 161212 10:32:01 web:1946] 200 GET /static/js/formvalid.js (172.17.92.116) 1.80ms
+[I 161212 10:32:01 web:1946] 200 GET /static/js/main.js (172.17.92.116) 1.88ms
+[I 161212 10:32:01 web:1946] 200 GET /static/js/term.js (172.17.92.116) 196.31ms
+[I 161212 10:32:01 web:1946] 200 GET /host/get/1 (172.17.92.116) 7.47ms
+[I 161212 10:32:13 web:1946] 200 GET /host (172.17.92.116) 17.56ms
+[I 161212 10:32:13 web:1946] 304 GET /host/get/1 (172.17.92.116) 5.11ms
+[I 161212 10:32:21 web:1946] 200 GET /actionmanager/owner/host/26 (172.17.92.116) 64.45ms
+[I 161212 10:32:29 web:1946] 200 GET /actionmanager/owner/host/25 (172.17.92.116) 4.84ms
+  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n    - show pid\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n    - name: show pid\n      shell: ./{{server}}/run show chdir={{project}}/{{serviceroot}}\n...']
+['20', 'Stop_M4_Server', 'Service', 'wentong.li', 'Stop the M4 Server no only any one server.', '2016-12-06 14:31:03', '---\n- hosts:  "{{hosts}}"\n  tasks:\n  - name: check if have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc stop service monitor\n    shell:  svc -dk  "{{server}}"  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - kill service\n  handlers:\n    - name: kill service \n      shell: ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['21', 'Restart_Elastic', 'Service', 'wentong', 'Restart the Elasticsearch service', '2016-12-08 14:55:38', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n\n  - name: Kill Elastic Process\n    shell:  kill -9 `ps aux |grep bootstrap.Elasticsearch | grep -v grep | awk -F \' \' \'{print $2}\'`\n\n  - name: Start Elasticsearch \n    shell:  nohup ./bin/elasticsearch  chdir={{ softpath }}\n  \n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n...']
+{'status': 'success', 'data': {1L: [1L, 'TestServer'], 3L: [3L, 'vlndhcp'], 4L: [4L, 'alarmserver'], 5L: [5L, 'asiserver'], 11L: [11L, 'VLN_GROUP'], 12L: [12L, 'M4_LBServer'], 13L: [13L, 'AAS_Group'], 14L: [14L, 'LBS_Group'], 15L: [15L, 'CMS_Group'], 16L: [16L, 'UPLOAD_Group'], 17L: [17L, 'ALARM_Group'], 18L: [18L, 'LCS_Group'], 19L: [19L, 'VLNDHCP_Group'], 20L: [20L, 'Firewall_Group']}}
+['username', '_xsrf', 'password']
+wentong.li@deltaww.com
+Delta123.
+6019256766b1378153935458a2fb184f
+6019256766b1378153935458a2fb184f
+debug
+host
+host
+run
+
+PLAY [203.66.65.169;52.28.176.236;183.131.153.137;54.188.192.95;117.28.254.133] *** 
+
+GATHERING FACTS *************************************************************** 
+ok: [183.131.153.137]
+ok: [117.28.254.133]
+ok: [203.66.65.169]
+[I 161212 10:48:23 web:1946] 304 GET /argument (172.17.92.116) 20.14ms
+[I 161212 10:48:23 web:1946] 304 GET /static/css/bootstrap.min.css (172.17.92.116) 22.25ms
+[I 161212 10:48:23 web:1946] 304 GET /static/css/sb-admin.css (172.17.92.116) 1.90ms
+[I 161212 10:48:23 web:1946] 304 GET /static/css/plugins/morris.css (172.17.92.116) 1.69ms
+[I 161212 10:48:23 web:1946] 304 GET /static/font-awesome/css/font-awesome.min.css (172.17.92.116) 1.48ms
+[I 161212 10:48:23 web:1946] 304 GET /static/js/jquery.js (172.17.92.116) 2.27ms
+[I 161212 10:48:23 web:1946] 304 GET /static/js/bootstrap.min.js (172.17.92.116) 1.96ms
+[I 161212 10:48:23 web:1946] 304 GET /static/js/deltaops.js (172.17.92.116) 1.33ms
+[I 161212 10:48:23 web:1946] 304 GET /static/js/plugins/morris/morris-data.js (172.17.92.116) 1.28ms
+[I 161212 10:48:23 web:1946] 304 GET /static/js/plugins/morris/morris.min.js (172.17.92.116) 2.20ms
+[I 161212 10:48:23 web:1946] 304 GET /static/js/plugins/morris/raphael.min.js (172.17.92.116) 1.75ms
+[I 161212 10:48:23 web:1946] 304 GET /static/fonts/glyphicons-halflings-regular.woff2 (172.17.92.116) 1.15ms
+[I 161212 10:48:23 web:1946] 304 GET /argument/page/1 (172.17.92.116) 117.20ms
+[I 161212 10:48:30 web:1946] 200 GET /login (172.17.92.116) 3.40ms
+[I 161212 10:48:30 web:1946] 304 GET /static/css/bootstrap.min.css (172.17.92.116) 5.01ms
+[I 161212 10:48:30 web:1946] 304 GET /static/css/signin.css (172.17.92.116) 2.27ms
+[I 161212 10:48:30 web:1946] 304 GET /static/js/ie-emulation-modes-warning.js (172.17.92.116) 2.20ms
+[I 161212 10:48:30 web:1946] 304 GET /static/js/ie10-viewport-bug-workaround.js (172.17.92.116) 2.21ms
+[I 161212 10:48:39 web:1946] 302 POST /login (172.17.92.116) 60.35ms
+[I 161212 10:48:39 web:1946] 304 GET / (172.17.92.116) 32.84ms
+[I 161212 10:48:39 web:1946] 304 GET /host/get/1 (172.17.92.116) 5.99ms
+[I 161212 10:48:39 web:1946] 304 GET /static/fonts/glyphicons-halflings-regular.woff2 (172.17.92.116) 1.53ms
+[I 161212 10:48:41 web:1946] 304 GET / (172.17.92.116) 18.33ms
+[I 161212 10:48:41 web:1946] 304 GET /static/css/bootstrap.min.css (172.17.92.116) 3.03ms
+[I 161212 10:48:41 web:1946] 304 GET /static/css/sb-admin.css (172.17.92.116) 2.28ms
+[I 161212 10:48:41 web:1946] 304 GET /static/font-awesome/css/font-awesome.min.css (172.17.92.116) 1.95ms
+[I 161212 10:48:41 web:1946] 304 GET /static/css/plugins/morris.css (172.17.92.116) 1.65ms
+[I 161212 10:48:41 web:1946] 304 GET /static/js/jquery.js (172.17.92.116) 3.53ms
+[I 161212 10:48:41 web:1946] 304 GET /static/js/plugins/morris/morris-data.js (172.17.92.116) 2.33ms
+[I 161212 10:48:41 web:1946] 304 GET /static/js/deltaops.js (172.17.92.116) 1.81ms
+[I 161212 10:48:41 web:1946] 304 GET /static/js/plugins/morris/raphael.min.js (172.17.92.116) 2.43ms
+[I 161212 10:48:41 web:1946] 304 GET /static/js/plugins/morris/morris.min.js (172.17.92.116) 1.74ms
+[I 161212 10:48:41 web:1946] 304 GET /static/js/bootstrap.min.js (172.17.92.116) 1.72ms
+[I 161212 10:48:41 web:1946] 304 GET /static/js/term.js (172.17.92.116) 2.97ms
+[I 161212 10:48:41 web:1946] 304 GET /static/js/formvalid.js (172.17.92.116) 1.46ms
+[I 161212 10:48:41 web:1946] 304 GET /static/js/ws.js (172.17.92.116) 1.32ms
+[I 161212 10:48:41 web:1946] 304 GET /static/js/main.js (172.17.92.116) 1.24ms
+[I 161212 10:48:41 web:1946] 304 GET /static/fonts/glyphicons-halflings-regular.woff2 (172.17.92.116) 1.42ms
+[I 161212 10:48:41 web:1946] 304 GET /host/get/1 (172.17.92.116) 5.34ms
+[I 161212 10:48:42 web:1946] 200 GET /actionmanager/owner/host/25 (172.17.92.116) 3.46ms
+[I 161212 10:48:44 web:1946] 200 GET /actionmanager/history/30 (172.17.92.116) 2.03ms
+['username', '_xsrf', 'password']
+wentong.li@deltaww.com
+Delta123.
+6019256766b1378153935458a2fb184f
+6019256766b1378153935458a2fb184f
+debug
+host
+run
+
+PLAY [203.66.65.169;52.28.176.236;183.131.153.137;54.188.192.95;117.28.254.133] *** 
+
+GATHERING FACTS *************************************************************** 
+ok: [183.131.153.137]
+ok: [117.28.254.133]
+ok: [203.66.65.169]
+ok: [52.28.176.236]
+
+TASK: [check have server] ***************************************************** 
+changed: [117.28.254.133]
+changed: [183.131.153.137]
+changed: [203.66.65.169]
+changed: [52.28.176.236]
+
+TASK: [svc start service] ***************************************************** 
+changed: [183.131.153.137]
+changed: [117.28.254.133]
+changed: [203.66.65.169]
+[I 161213 15:30:55 web:1946] 200 GET /host (172.17.92.116) 21.37ms
+[I 161213 15:30:55 web:1946] 304 GET /static/js/deltaops.js (172.17.92.116) 9.86ms
+[I 161213 15:30:55 web:1946] 304 GET /static/js/term.js (172.17.92.116) 2.34ms
+[I 161213 15:30:55 web:1946] 304 GET /static/js/ws.js (172.17.92.116) 1.41ms
+[I 161213 15:30:55 web:1946] 304 GET /static/js/formvalid.js (172.17.92.116) 1.38ms
+[I 161213 15:30:55 web:1946] 304 GET /static/js/main.js (172.17.92.116) 1.32ms
+[I 161213 15:30:55 web:1946] 304 GET /host/get/1 (172.17.92.116) 14.04ms
+[I 161213 15:31:00 web:1946] 304 GET /host/get/2 (172.17.92.116) 4.60ms
+[I 161213 15:31:01 web:1946] 200 GET /host/get/3 (172.17.92.116) 3.30ms
+[I 161213 15:31:02 web:1946] 304 GET /host/get/2 (172.17.92.116) 5.57ms
+[I 161213 15:31:08 web:1946] 304 GET /host/get/1 (172.17.92.116) 6.68ms
+[I 161213 15:31:12 web:1946] 304 GET /group (172.17.92.116) 19.11ms
+[I 161213 15:31:12 web:1946] 304 GET /group/?page=1 (172.17.92.116) 3.37ms
+[I 161213 15:31:14 web:1946] 200 GET /group/?page=2 (172.17.92.116) 3.25ms
+[I 161213 15:31:16 web:1946] 304 GET /group/?page=1 (172.17.92.116) 3.22ms
+[I 161213 15:31:25 web:1946] 200 DELETE /group/ (172.17.92.116) 179.85ms
+[I 161213 15:31:25 web:1946] 200 GET /group/?page=1 (172.17.92.116) 2.70ms
+[I 161213 15:31:27 web:1946] 304 GET /host (172.17.92.116) 20.87ms
+[I 161213 15:31:28 web:1946] 304 GET /host/get/1 (172.17.92.116) 8.12ms
+[I 161214 09:48:00 web:1946] 304 GET /host (172.17.92.116) 21.26ms
+[I 161214 09:48:03 web:1946] 304 GET /static/js/term.js (172.17.92.116) 2.55ms
+[I 161214 09:48:03 web:1946] 304 GET /static/js/ws.js (172.17.92.116) 1.51ms
+[I 161214 09:48:03 web:1946] 304 GET /static/js/formvalid.js (172.17.92.116) 3.03ms
+[I 161214 09:48:03 web:1946] 304 GET /static/js/main.js (172.17.92.116) 1.42ms
+[I 161214 09:48:10 web:1946] 304 GET /host/get/1 (172.17.92.116) 5.69ms
+[I 170119 15:07:41 web:1946] 302 GET / (172.17.92.116) 1.71ms
+[I 170119 15:07:41 web:1946] 200 GET /login?next=%2F (172.17.92.116) 25.68ms
+[I 170119 15:07:42 web:1946] 200 GET /static/css/bootstrap.min.css (172.17.92.116) 55.10ms
+[I 170119 15:07:42 web:1946] 200 GET /static/js/ie10-viewport-bug-workaround.js (172.17.92.116) 31.00ms
+[I 170119 15:07:42 web:1946] 200 GET /static/css/signin.css (172.17.92.116) 12.67ms
+[I 170119 15:07:42 web:1946] 200 GET /static/js/ie-emulation-modes-warning.js (172.17.92.116) 2.45ms
+[W 170119 15:07:42 web:1946] 404 GET /favicon.ico (172.17.92.116) 84.52ms
+[I 170119 15:07:51 web:1946] 302 POST /login (172.17.92.116) 530.62ms
+[I 170119 15:07:51 web:1946] 200 GET / (172.17.92.116) 54.70ms
+[I 170119 15:07:52 web:1946] 200 GET /static/css/sb-admin.css (172.17.92.116) 10.56ms
+[I 170119 15:07:52 web:1946] 200 GET /static/css/plugins/morris.css (172.17.92.116) 20.53ms
+[I 170119 15:07:52 web:1946] 200 GET /static/font-awesome/css/font-awesome.min.css (172.17.92.116) 31.28ms
+[I 170119 15:07:52 web:1946] 200 GET /static/js/jquery.js (172.17.92.116) 13.20ms
+[I 170119 15:07:52 web:1946] 200 GET /static/js/bootstrap.min.js (172.17.92.116) 17.30ms
+[I 170119 15:07:52 web:1946] 200 GET /static/js/plugins/morris/morris-data.js (172.17.92.116) 9.13ms
+[I 170119 15:07:52 web:1946] 200 GET /static/js/deltaops.js (172.17.92.116) 2.46ms
+[I 170119 15:07:52 web:1946] 200 GET /static/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0 (172.17.92.116) 20.15ms
+[I 170119 15:07:52 web:1946] 200 GET /static/js/plugins/morris/morris.min.js (172.17.92.116) 13.88ms
+[I 170119 15:07:52 web:1946] 200 GET /static/js/plugins/morris/raphael.min.js (172.17.92.116) 28.96ms
+[I 170119 15:07:52 web:1946] 200 GET /static/js/ws.js (172.17.92.116) 11.43ms
+[I 170119 15:07:52 web:1946] 200 GET /static/fonts/glyphicons-halflings-regular.woff2 (172.17.92.116) 49.29ms
+[I 170119 15:07:52 web:1946] 200 GET /static/js/formvalid.js (172.17.92.116) 57.16ms
+[I 170119 15:07:52 web:1946] 200 GET /static/js/main.js (172.17.92.116) 14.72ms
+[I 170119 15:07:52 web:1946] 200 GET /static/js/term.js (172.17.92.116) 150.62ms
+[I 170119 15:07:53 web:1946] 200 GET /host/get/1 (172.17.92.116) 9.47ms
+[I 170119 15:08:24 web:1946] 200 POST /host/post (172.17.92.116) 76.05ms
+[I 170119 15:08:24 web:1946] 304 GET /host/get/1 (172.17.92.116) 8.56ms
+[I 170119 15:08:26 web:1946] 200 GET /host/get/2 (172.17.92.116) 8.11ms
+[I 170119 15:08:38 web:1946] 200 GET /addplaybook (172.17.92.116) 41.74ms
+['username', '_xsrf', 'password']
+wentong.li@deltaww.com
+Delta123.
+6019256766b1378153935458a2fb184f
+6019256766b1378153935458a2fb184f
+debug
+['16', 'START_M4', 'Service', 'wentong', 'wentong', '2016-12-05 13:38:13', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['17', 'Start_Vln_Group_Vlnserver', 'Service', 'wentong', 'Start the vln server for Group vlnserver', '2016-12-06 09:57:45', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['18', 'Restart_Supervisorctl_APP', 'Service', 'wentong', 'Restart  supervicsoctl app', '2016-12-06 14:03:30', '---\n- hosts: "{{ hosts }}"\n  tasks:\n  - name: Restart The App\n    shell: supervisorctl restart "{{ appname }}"\n...']
+['19', 'Start_M4_Server', 'Service', 'wentong', 'Start the m4 server no only any one server', '2016-12-06 14:15:55', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n    - show pid\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n    - name: show pid\n      shell: ./{{server}}/run show chdir={{project}}/{{serviceroot}}\n...']
+['20', 'Stop_M4_Server', 'Service', 'wentong.li', 'Stop the M4 Server no only any one server.', '2016-12-06 14:31:03', '---\n- hosts:  "{{hosts}}"\n  tasks:\n  - name: check if have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc stop service monitor\n    shell:  svc -dk  "{{server}}"  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - kill service\n  handlers:\n    - name: kill service \n      shell: ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['21', 'Restart_Elastic', 'Service', 'wentong', 'Restart the Elasticsearch service', '2016-12-08 14:55:38', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n\n  - name: Kill Elastic Process\n    shell:  kill -9 `ps aux |grep bootstrap.Elasticsearch | grep -v grep | awk -F \' \' \'{print $2}\'`\n\n  - name: Start Elasticsearch \n    shell:  nohup ./bin/elasticsearch  chdir={{ softpath }}\n  \n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n...']
+['22', 'Test_M4_Init', 'Service', 'wentong', 'Test to init the m4 project', '2016-12-16 09:32:37', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: create project directory\n    command: mkdir {{ProjectPath}} -p\n    args:\n      chdir: /tmp\n      creates: "{{ ProjectPath }}"\n\n  - name: apt-get install git\n    apt: name=git state=latest\n  - name: apt-get install daemontools\n    apt: name=daemontools state=latest\n   \n  - name: clone server-tmp\n    git: repo=ssh://git@119.28.49.228:/data/gitrepository/server-tmp dest={{ProjectPath}}/server-tmp\n    args:\n      clone: yes\n      force: yes\n  - name: clone gitlib \n    git: repo=ssh://git@119.28.49.228:/data/gitrepository/gitlibs dest={{ProjectPath}}/gitlibs\n    args:\n      clone: yes\n      force: yes\n  - name: ln -s lib gitlib\n    file: src={{ProjectPa[I 170119 15:08:38 web:1946] 200 GET /playbookmanager/page/1 (172.17.92.116) 3.95ms
+[I 170119 15:09:05 web:1946] 200 GET /action (172.17.92.116) 40.80ms
+[I 170119 15:09:05 web:1946] 200 GET /host/all (172.17.92.116) 4.58ms
+[I 170119 15:09:05 web:1946] 200 GET /group/all (172.17.92.116) 3.43ms
+th}}/gitlibs dest={{ProjectPath}}/libs state=link force=yes\n \n  - name: clone gitbin\n    git: repo=ssh://git@119.28.49.228:/data/gitrepository/gitbin dest={{ProjectPath}}/gitbin\n    args:\n      clone: yes\n      force: yes\n  - name: ln -s bin gitbin\n    file: src={{ProjectPath}}/gitbin dest={{ProjectPath}}/bin state=link force=yes\n\n  - name: create log directory \n    file: path={{ProjectPath}}/logs state=directory\n  - name: create service root dir \n    file: path={{ProjectPath}}/{{ServiceRoot}} state=directory\n\n  - name: copy initconfig \n    template: src=/data/ansible-playbook/config/initconfig dest={{ProjectPath}}/{{ServiceRoot}}/initconfig\n\n  - name: create config directory\n    file: path={{ProjectPath}}/config/config state=directory\n\n  - name: copy logs.sh script  \n    template: src=/data/ansible-playbook/config/logs.sh  dest={{ProjectPath}}/logs/logs.sh\n\n  - name: template file\n    template: src=/data/ansible-playbook/config/{{ item }} dest={{ProjectPath}}/config/{{ item }}\n    with_items:\n      - LBServer.ini\n      - AlarmServer.ini\n      - cmserver.ini\n      - fwagent.ini\n      - lcclient.ini\n      - lcveriapiconfig.ini\n      - lcvericonfig.ini\n      - dblc.conf\n      - initconfig\n      - LBClientConfig.ini\n      - LBServer.ini\n      - lcconfig.ini\n      - libdbapi.conf\n   ']
+['23', 'Test_Start_init_Server', 'Service', 'wentong', 'Start| Restart | Init  service', '2016-12-16 10:26:33', '---\n- hosts: "{{ hosts }}"\n  tasks:\n\n  - name: check if have service root on server\n    shell: ls -ld {{ProjectPath}}/{{ServiceRoot}} | grep {{server}} | wc -l \n    register: ifHaveServerDir\n \n  - name: Copy server dir from server-tmp to server\n    shell: cp -rf server-tmp/{{server}} {{ServiceRoot}}/   \n    when: ifHaveServerDir.stdout == "0"\n    args:\n      chdir: "{{ ProjectPath }}"\n\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{ProjectPath}}/{{ServiceRoot}}\n\n  - name: kill service \n    shell: ./{{server}}/run stop  chdir={{ProjectPath}}/{{ServiceRoot}}\n...']
+['24', 'Update_Latest_GitRep', 'Git', 'wentong', 'Go to Git repository and update to latest version.', '2016-12-16 11:02:24', '---\n- hosts: "{{ hosts }}"\n  tasks:\n  - name: Update to latest version\n    shell:  git pull   chdir={{gitRepPath}}\n...']
+['25', 'Rsync_TestRepo_2_ProRepo', 'Deploy', 'wentong', 'sync web test git responsitory to product responsitory and push the change to server.', '2016-12-16 16:42:13', '---\n- hosts: 106.75.133.85\n  tasks:\n  - name: Update test-gitrpo to pro-gitrpo use rsync\n    shell: rsync -ac --delete --exclude-from=\'./{{sourceRepo}}/rsync.ini\' {{sourceRepo}}/ {{destRepo}}/\n    args:\n      chdir: /data/M4-Product/www\n  \n  - name: Add  all change to Product git responsitory \n    shell: git add ./*  chdir=/data/M4-Product/www/{{destRepo}}\n  \n  - name: Check if need to commit \n    shell: git status | grep "nothing to commit" |wc -l chdir=/data/M4-Product/www/{{destRepo}}\n    register: needcommit\n\n  - name: Commit  all change to Product git responsitory \n    shell: git commit -a -m \'{{destRepo}}\' chdir=/data/M4-Product/www/{{destRepo}}\n    when: needcommit.stdout == "0"\n\n  - name: Push the change to git server\n    shell: git push origin  master chdir=/data/M4-Product/www/{{destRepo}}\n    when: needcommit.stdout == "0"\n...']
+{'status': 'success', 'data': {1L: [1L, 'TestServer'], 3L: [3L, 'vlndhcp'], 11L: [11L, 'VLN_GROUP'], 12L: [12L, 'M4_LBServer'], 13L: [13L, 'AAS_Group'], 14L: [14L, 'LBS_Group'], 15L: [15L, 'CMS_Group'], 16L: [16L, 'UPLOAD_Group'], 17L: [17L, 'ALARM_Group'], 18L: [18L, 'LCS_Group'], 19L: [19L, 'VLNDHCP_Group'], 20L: [20L, 'Firewall_Group'], 21L: [21L, 'Test_init'], 22L: [22L, 'Webserver_CRM'], 23L: [23L, 'webserver_iot'], 24L: [24L, 'webserver_restapi']}}
+['16', 'START_M4', 'Service', 'wentong', 'wentong', '2016-12-05 13:38:13', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['17', 'Start_Vln_Group_Vlnserver', 'Service', 'wentong', 'Start the vln server for Group vlnserver', '2016-12-06 09:57:45', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['18', 'Restart_Supervisorctl_APP', 'Service', 'wentong', 'Restart  supervicsoctl app', '2016-12-06 14:03:30', '---\n- hosts: "{{ hosts }}"\n  tasks:\n  - name: Restart The App\n    shell: supervisorctl restart "{{ appname }}"\n...']
+['19', 'Start_M4_Server', 'Service', 'wentong', 'Start the m4 server no only any one server', '2016-12-06 14:15:55', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: check have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc start service \n    shell:  svc -uc {{server}}  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - restart process\n    - show pid\n  handlers:\n    - name:  restart process\n      shell:  ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n    - name: show pid\n      shell: ./{{server}}/run show chdir={{project}}/{{serviceroot}}\n...']
+['20', 'Stop_M4_Server', 'Service', 'wentong.li', 'Stop the M4 Server no only any one server.', '2016-12-06 14:31:03', '---\n- hosts:  "{{hosts}}"\n  tasks:\n  - name: check if have server\n    shell: ls -d {{project}}/{{serviceroot}}/{{server}} | wc -l\n    register: result\n  - name: svc stop service monitor\n    shell:  svc -dk  "{{server}}"  chdir={{project}}/{{serviceroot}}\n    when: result.stdout == "1"\n    notify:\n    - kill service\n  handlers:\n    - name: kill service \n      shell: ./{{server}}/run stop  chdir={{project}}/{{serviceroot}}\n...']
+['21', 'Restart_Elastic', 'Service', 'wentong', 'Restart the Elasticsearch service', '2016-12-08 14:55:38', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n\n  - name: Kill Elastic Process\n    shell:  kill -9 `ps aux |grep bootstrap.Elasticsearch | grep -v grep | awk -F \' \' \'{print $2}\'`\n\n  - name: Start Elasticsearch \n    shell:  nohup ./bin/elasticsearch  chdir={{ softpath }}\n  \n  - name: Show Elasticsearch Pid\n    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep \n...']
+['22', 'Test_M4_Init', 'Service', 'wentong', 'Test to init the m4 project', '2016-12-16 09:32:37', '---\n- hosts: "{{hosts}}"\n  tasks:\n  - name: create project directory\n    command: mkdir {{ProjectPath}} -p\n    args:\n      chdir: /tmp\n      creates: "{{ ProjectPath }}"\n\n  - name: apt-get install git\n    apt: name=git state=latest\n  - name: apt-get install daemontools\n    apt: name=daemontools state=latest\n   \n  - name: clone server-tmp\n    git: repo=ssh://git@119.28.49.228:/data/gitrepository/server-tmp dest={{ProjectPath}}/server-tmp\n    args:\n      clone: yes\n      force: yes\n  - name: clone gitlib \n    git: repo=ssh://git@119.28.49.228:/data/gitrepository/gitlibs dest={{ProjectPath}}/gitlibs\n    args:\n      clone: yes\n      force: yes\n  - name: ln -s lib gitlib\n    file: src={{ProjectPath}}/gitlibs dest={{ProjectPath}}/libs state=link force=yes\n \n  - name: clone gitbin\n    git: repo=ssh://git@119.28.49.228:/data/gitrepository/gitbin dest={{ProjectPath}}/gitbin\n    args:\n      clone: yes\n      force: yes\n  - name: ln -s bin gitbin\n    file: src={{ProjectPath}}/gitbin dest={{ProjectPath}}/bin state=link force=yes\n\n  - name: create log directory \n    file: path={{ProjectPath}}/log[I 170119 15:09:05 web:1946] 200 GET /playbookmanager/all/ (172.17.92.116) 3.86ms
+[I 170119 15:09:05 web:1946] 200 GET /argument/all/ (172.17.92.116) 4.62ms
+[I 170119 15:09:05 web:1946] 200 GET /actionmanager/page/1 (172.17.92.116) 5.59ms
+[I 170119 15:09:10 web:1946] 200 GET /actionmanager/page/2 (172.17.92.116) 7.85ms
+[I 170119 15:09:31 web:1946] 200 GET /group (172.17.92.116) 41.44ms
+[I 170119 15:09:31 web:1946] 200 GET /group/?page=1 (172.17.92.116) 4.21ms
+[I 170119 15:09:34 web:1946] 200 GET /actionmanager/owner/hostgroup/21 (172.17.92.116) 3.93ms
+[I 170119 15:09:37 web:1946] 200 GET /actionmanager/history/45 (172.17.92.116) 3.79ms
+[I 170119 15:09:46 web:1946] 200 GET /host (172.17.92.116) 18.80ms
+[I 170119 15:09:47 web:1946] 304 GET /host/get/1 (172.17.92.116) 5.69ms
+[I 170119 15:09:48 web:1946] 304 GET /host/get/2 (172.17.92.116) 5.65ms
+[I 170119 15:09:52 web:1946] 304 GET /group/all (172.17.92.116) 4.27ms
+[I 170119 15:09:52 web:1946] 200 GET /host/group/43 (172.17.92.116) 3.16ms
+[I 170119 15:09:58 web:1946] 200 POST /host/group/43 (172.17.92.116) 42.71ms
+[I 170119 15:09:58 web:1946] 200 GET /host/get/2 (172.17.92.116) 7.00ms
+[I 170119 15:10:01 web:1946] 304 GET /host (172.17.92.116) 18.77ms
+[I 170119 15:10:01 web:1946] 304 GET /host/get/1 (172.17.92.116) 9.58ms
+[I 170119 15:10:03 web:1946] 304 GET /host/get/2 (172.17.92.116) 5.40ms
+[I 170119 15:10:10 web:1946] 200 GET /actionmanager/owner/host/43 (172.17.92.116) 21.72ms
+[I 170119 15:10:12 web:1946] 200 POST /actionmanager/run/45 (172.17.92.116) 158.60ms
+[I 170119 15:10:18 web:1946] 200 GET /actionmanager/history/45 (172.17.92.116) 4.12ms
+[I 170119 15:10:24 web:1946] 200 POST /actionmanager/run/45 (172.17.92.116) 63.00ms
+[I 170119 15:10:32 web:1946] 200 GET /actionmanager/history/45 (172.17.92.116) 2.99ms
+[I 170119 15:10:38 web:1946] 200 POST /actionmanager/run/45 (172.17.92.116) 38.47ms
+[I 170119 15:10:41 web:1946] 200 GET /actionmanager/history/45 (172.17.92.116) 3.31ms

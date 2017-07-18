@@ -1,0 +1,11 @@
+---
+- hosts: "{{hosts}}"
+  tasks:
+  - name: template file
+    template: src=/data/web/testplaybook/file/{{ item }} dest={{ProjectPath}}/config/{{ item }}
+    with_items:
+      - config_4.ini
+      - config_5.ini
+  - name: to sleep
+    shell: sleep 10
+...

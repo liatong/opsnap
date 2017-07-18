@@ -1,0 +1,20 @@
+---
+- hosts: "{{ hosts }}"
+  tasks:
+  - name: template logrotate config 
+    template: src=/data/ansible-playbook/config/logrotate.conf dest=/etc/logrotate.d/{{ProjectName}}.{{service}}.log
+
+  - name: Check if have server directory
+    shell: ls -lh {{ServiceRoot}}/{{ServiceRoot}}/{{service}} | wc -l
+    register: result 
+       
+  - name: copy  the server directory at server-tmp  folder
+    command: cp -rf  server-tmp/{{serviceDir}}  {{ServiceRoot}}/
+    when: result.stdout == "0" 
+    args:
+      chdir: "{{ ProjectPath }}"
+
+  - name: svc start service 
+    shell:  svc -uc {{serviceDir}}  chdir={{ProjectPath}}/{{ServiceRoot}}
+
+...

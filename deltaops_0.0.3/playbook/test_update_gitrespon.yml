@@ -1,0 +1,6 @@
+---
+- hosts: "{{ hosts }}"
+  tasks:
+  - name: Update to latest version
+    shell:  git pull   chdir={{gitRepPath}}
+...

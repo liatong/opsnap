@@ -1,0 +1,15 @@
+---
+- hosts: "{{hosts}}"
+  tasks:
+  - name: Show Elasticsearch Pid
+    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep 
+
+  - name: Kill Elastic Process
+    shell:  kill -9 `ps aux |grep bootstrap.Elasticsearch | grep -v grep | awk -F ' ' '{print $2}'`
+
+  - name: Start Elasticsearch 
+    shell:  nohup ./bin/elasticsearch  chdir={{ softpath }}
+  
+  - name: Show Elasticsearch Pid
+    shell: ps aux |grep bootstrap.Elasticsearch | grep -v grep 
+...

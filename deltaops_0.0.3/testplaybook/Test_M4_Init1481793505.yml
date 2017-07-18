@@ -1,0 +1,96 @@
+---
+- hosts: "{{hosts}}"
+  tasks:
+  - name: create project directory
+    command: mkdir {{project}} -p
+    args:
+      chdir: /tmp
+      creates: "{{ project}}"
+
+  - name: apt-get install git
+    apt: name=git state=latest
+  - name: apt-get install daemontools
+    apt: name=daemontools state=latest
+   
+  - name: clone server-tmp
+    git: repo=ssh://git@119.28.49.228:/data/gitrepository/server-tmp dest={{project}}/server-tmp
+    args:
+      clone: yes
+      force: yes
+  - name: clone gitlib 
+    git: repo=ssh://git@119.28.49.228:/data/gitrepository/gitlibs dest={{project}}/gitlibs
+    args:
+      clone: yes
+      force: yes
+  - name: ln -s lib gitlib
+    file: src={{project}}/gitlibs dest={{project}}/libs state=link force=yes
+ 
+  - name: clone gitbin
+    git: repo=ssh://git@119.28.49.228:/data/gitrepository/gitbin dest={{project}}/gitbin
+    args:
+      clone: yes
+      force: yes
+  - name: ln -s bin gitbin
+    file: src={{project}}/gitbin dest={{project}}/bin state=link force=yes
+
+  - name: create log directory 
+    file: path={{project}}/logs state=directory
+  - name: create service root dir 
+    file: path={{project}}/{{serviceroot}} state=directory
+
+  - name: copy initconfig 
+    template: src=/data/ansible-playbook/config/initconfig dest={{project}}/{{serviceroot}}/initconfig
+
+  - name: create config directory
+    file: path={{project}}/config/config state=directory
+
+  - name: copy logs.sh script  
+    template: src=/data/ansible-playbook/config/logs.sh  dest={{project}}/logs/logs.sh
+
+  - name: template file
+    template: src=/data/ansible-playbook/config/{{ item }} dest={{project}}/config/{{ item }}
+    with_items:
+      - LBServer.ini
+      - AlarmServer.ini
+      - cmserver.ini
+      - fwagent.ini
+      - lcclient.ini
+      - lcveriapiconfig.ini
+      - lcvericonfig.ini
+      - dblc.conf
+      - initconfig
+      - LBClientConfig.ini
+      - LBServer.ini
+      - lcconfig.ini
+      - libdbapi.conf
+      - NATConfig.ini
+      - PFRingRelayServer.ini
+
+  - name: template config/config file
+    template: src=/data/ansible-playbook/config/config/{{ item }} dest={{project}}/config/config/{{ item }}
+    with_items:
+      - aasclient.conf
+      - aasserver.conf
+      - rcserver.ini 
+
+  - name: template command config file
+    copy: src=/data/ansible-playbook/config/{{ item }} dest={{project}}/config/{{item }}
+    with_items:
+      - 17monipdb.dat
+      - serverlist.ini
+      - vidalccert.pem
+      - vidalcprikey.pem
+      # Alarm lib
+      - libemailalarm.so
+      - libsmsalarm.so
+      
+  - name: get svscan 
+    shell: ps aux |grep -v grep | grep svscan |grep {{project}} | wc -l
+    register: result 
+
+  - name: template f
+    shell: nohup svscan {{serviceroot}} &
+    when: result.stdout == "0" 
+    args:
+      chdir: "{{ project}}"
+...

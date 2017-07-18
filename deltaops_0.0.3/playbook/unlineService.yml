@@ -1,0 +1,7 @@
+---
+- hosts: "{{ hosts }}"
+  tasks:
+  - include: stop.yml
+  - name: rm serverDir 
+    shell:  rm -rf  {{serviceDir}}  chdir={{ProjectPath}}/{{ServiceRoot}}
+...

@@ -1,0 +1,387 @@
+{% extends "base.html" %}
+
+{% block page-wrapper %}
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 class="page-header">
+                            代码管理
+                        </h4>
+                    </div>
+                </div>     
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul>
+                         <button type="button" class="btn btn-primary" data-toggle="modal" id="deploycode" data-target="#deploycodeModal">代码发布</button>
+                         <button type="button" class="btn btn-primary" id="rmproject" data-toggle="modal" data-target="#">发布回滚</button>
+                         <button type="button" class="btn btn-primary" id="gitrepo" data-toggle="modal" data-target="#gitrepoModal">Git仓库</button>
+                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newbackModal" id="tonew" >更新至最新</button>
+                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newbackModal" id="gobackup" >回滚上一版</button>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                              <div class="input-group-btn" id="action">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Host <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                  <li><a >主机</a></li>
+                                  <li><a >主机组</a></li>
+                                </ul>
+                              </div><!-- /btn-group -->
+                              <input type="text" class="form-control" aria-label="...">
+                              <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Search</button>
+                              </span>
+                        </div>  
+                    </div>
+                </div>
+                
+                <!-- /.row -->
+                <div class="row">
+                <!-- modal add project-->
+                <div class="modal fade" id="deploycodeModal" tabindex="-1" role="dialog" aria-labelledby="deploycodeModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title" id="deploycodeModalLabel">代码发布</h3>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                             <form id= "deploycodeForm" class="form-horizontal">
+                                <div class="form-group">
+                                  <label class="control-lable">发布对象池</label>
+                                   <div class="alert alert-success true">
+                                   </div>
+                                   <div class="alert alert-warning false">
+                                   </div>
+                                </div>
+                               
+                                <div class="form-group">
+                                    <label for="projectname">更新版本</label>
+                                    <input type="text" class="form-control" id="projectname" placeholder="xmserve-m4-product">
+                                </div>
+                            
+                            </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="commitremove">Commit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- end modal add project-->
+                
+                <!-- modal gitrepoModal -->
+                <div class="modal fade" id="gitrepoModal" tabindex="-1" role="dialog" aria-labelledby="gitrepoModalLabel">
+                  <div class="modal-dialog " role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title" id="gitrepoModalLabel">Git源仓库</h3>
+                      </div>
+                      <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <dl class="dl-horizontal">
+                                      <dt>Git 仓库名称：</dt>
+                                      <dd>gitlbis</dd>
+                                    </dl>
+                                    <dl class="dl-horizontal">
+                                      <dt>Git Server</dt>
+                                      <dd>gitlbis</dd>
+                                    </dl>
+                                    <dl class="dl-horizontal">
+                                      <dt>当前版本</dt>
+                                      <dd>gitlbis</dd>
+                                    </dl>
+                                    <dl class="dl-horizontal">
+                                      <dt>版本时间</dt>
+                                      <dd>gitlbis</dd>
+                                    </dl>
+                                    <dl class="dl-horizontal">
+                                      <dt>版本说明</dt>
+                                      <dd>gitlbis</dd>
+                                    </dl>
+                                </div>
+                               <div class="row hide">
+                                    <h4><strong>变更内容</strong></h4>
+                                    <p>
+                                        <strong>Add file:&nbsp;&nbsp;</strong>
+                                        asdfasdfasdfas,asdfasdfa,asdfasdfa
+                                    </p>
+                                    <p>
+                                        <strong>Modifile::&nbsp;&nbsp;</strong>
+                                        123123123,asdfasdf,asdfsd
+                                    </p>
+                               </div>
+                               <div class="form-group hide">
+                                    <label for="exampleInputPassword1">更新说明：</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="更新说明信息">
+                              </div>
+                            </div>
+                            
+                        </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="commitremove">查看更新</button>
+                        <button type="button" class="btn btn-primary" id="commitremove">推送更新</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+       
+                <!-- end modal gitrepoModal ->
+                
+                <!-- modal tonew code-->
+                <div class="modal fade" id="newbackModal" tabindex="-1" role="dialog" aria-labelledby="newbackModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title" id="newbackModalLabel">更新到最新版本</h3>
+                      </div>
+                      <div class="modal-body">
+                      <div class="container-fluid">
+                         <form id= "showobjForm" class="form-horizontal">
+                                <div class="form-group">
+                                  <label class="control-lable">发布对象池</label>
+                                   <div class="alert alert-success true">
+                                        <p></P>
+                                   </div>
+                                   <div class="alert alert-warning false hide">
+                                   </div>
+                                </div>
+                               
+                            </form>
+                      </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="commitremove">Commit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+       
+                <!-- end tonew code-->
+                
+                
+                <!-- project table -->
+                <table  id="showproject" class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>全选</th>
+                            <th>项目名称</th>
+                            <th>关联主机</th>
+                            <th>主机组</th>
+                            <th>项目路径</th>
+                            <th>代码库</th>
+                            <th>Git仓库</th>
+                            <th>版本号</th>
+                            <th>版本时间</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                
+                      
+                    </tbody>
+                </table>
+ 
+                <!-- end  project table -->
+                <!-- row page -->
+               
+                  <ul class="pager">
+                    <li><a href="#">Previous</a></li>
+                    <li><a href="#">Next</a></li>
+                  </ul>
+              
+                <!-- row page -->   
+                </div>
+               
+                <!-- Flot Charts -->
+
+                 
+            </div>
+            <!-- /.container-fluid -->
+           
+{% end %}
+
+{% block script-extend %}
+    <script>
+    $("#action .dropdown-menu li ").click(function(){$("#action button").html($(this).text()+'  <span class="caret"></span>') });
+    
+    var checkboxSelect = [];
+    var deployobj;
+    var repo ;
+
+    function bindCheckbox(){
+        $("table tbody tr td input:checkbox").click(function(){
+            let  dobj = {};
+            dobj['host'] = $(this).parent().siblings()[1].innerText;
+            dobj['path'] = $(this).parent().siblings()[3].innerText;
+            dobj['repo'] = $(this).parent().siblings()[4].innerText;
+            dobj['gitrepo'] = $(this).parent().siblings()[5].innerText;
+            if( $(this).prop("checked") ){
+                checkboxSelect.push(dobj);
+                $(this).parent().parent().addClass('success');
+            }else{
+                checkboxSelect.pop(dobj)
+                $(this).parent().parent().removeClass('success');
+            }
+        })            
+    }
+    
+    var pobj = {
+        1:['m4','xmserver','vlns','/data/','libs','gitlibs','123456768','2016-04-14 16:00'],
+        2:['m4','xmserver','vlns','/data/','bin','gitlibs','123456768','2016-04-14 16:00'],
+        3:['m4','huadong','vlns','/data/','libs','gitlibs','123456768','2016-04-14 16:00'],
+        4:['m4','huadong','vlns','/data/','bin','gitlibs','123456768','2016-04-14 16:00'],
+        5:['m4','asiserver','vlns','/data/','libs','gitlibs','123456768','2016-04-14 16:00'],
+        6:['m4','asiserver','vlns','/data/','bin','gitlibs','123456768','2016-04-14 16:00'],   
+    }
+    
+    
+    
+    function sendData(data){
+        console.log(data);
+        return 1;
+    }
+    
+    
+    
+    function showDataTable(tb,obj,stdhtml,endtdhtml,bindfunc){
+        
+        var rt = 1;
+        if(typeof obj != "undefined" && typeof obj == "object" && typeof tb == "object"){
+            $.each(obj,function(key,value){
+                var itr = document.createElement('tr');
+                //create tr fist td,if have stdhtml
+                if( typeof stdhtml == 'string'){
+                    var std = document.createElement('td');
+                    std.innerHTML = stdhtml;
+                    itr.appendChild(std);
+                }
+                value.map(function(text){
+                    var btd = document.createElement('td');
+                    btd.innerText= text;
+                    itr.appendChild(btd);
+                });
+                // create define td when have stdhtml
+                if( typeof endtdhtml == 'string'){
+                    var endtd = document.createElement('td');
+                    endtd.innerHTML = endtdhtml;
+                    itr.appendChild(endtd);
+                }
+                
+                //append tr to tbody
+                tb.append(itr);
+            });
+            
+            //  callback append html even function
+            if( typeof bindfunc == "function" ){
+                bindfunc();
+            };
+            rt = 1;
+            
+        }else{
+            console.log('show table is obj is undefine.');
+            rt = 0;
+        }
+        console.log('debug');
+        return rt;
+        
+    }
+    
+    function bindmanage(){
+        $('.smanage').on('click',function(){
+            $("#smanage").trigger('click');
+        })
+    }
+    
+    //show deploy code table
+    function showProjectTable(){
+        let endtdhtml = '<button type="button" class="btn btn-link smanage"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></button>';
+        let stdhtml = '<input type="checkbox">';
+        let tb = $('#showproject tbody');
+        showDataTable(tb,pobj,stdhtml,endtdhtml,bindCheckbox);
+    }
+    showProjectTable();
+    
+    //Get checkbox and show to deploycode modal. and filter  diffrente repo with  first checkbox's repo.
+    function showDeployCode(){
+        deployobj = checkboxSelect;
+        let truelist = []
+        let falselist = [];
+        let dtrue = $("#deploycodeForm div.true");
+        let dfalse = $("#deploycodeForm div.false");
+        dtrue.children().remove();
+        dfalse.children().remove();
+        if( deployobj.length >0 ){
+            let git = deployobj[0]['repo'];
+            deployobj.map(function(obj){ ( obj['repo'] == git) ? truelist.push(obj) : falselist.push(obj); })
+            truelist.map(function(obj){
+                dtrue.append('<p>'+obj['host']+':'+obj['path']+':'+obj['repo']+':'+obj['gitrepo']+'</p>');
+            });
+            falselist.map(function(obj){
+                dfalse.append('<s>'+obj['host']+':'+obj['path']+':'+obj['repo']+':'+obj['gitrepo']+'</s><p> ');
+            })
+        }else{
+            console.log("no checkbox");
+        }
+    }
+    
+    $("#deploycode").click(function(){
+        console.log('click');
+        showDeployCode();
+    })
+    
+    function bindServerAction(){
+        $("#smanageModel tbody tr button").click(function(){
+            //console.log( $(this).attr('action'),$(this).parent().siblings().first().next().text() ) ;
+            let action = $(this).attr('action');
+            let servername =  $(this).parent().siblings().first().next().text() ;
+            var $btn = $(this).button('loading')
+            $(this).siblings().attr("disabled","disabled");
+            //action(servername);
+            if(sendData(servername)){
+                 $btn.button('reset');
+                 $(this).siblings().removeAttr('disabled');
+            }else{
+                console.log(action+'fail');
+            }
+        })
+    }
+    
+    //tonew && goback  function that display which  obj will be appley.
+    function showobj(){
+        console.log(checkboxSelect);
+        let showobj = checkboxSelect;
+        let showobjForm = $("#showobjForm div.true");
+        showobjForm.children().remove();
+        if( showobj.length > 0 ){
+            showobj.map(function(obj){
+                showobjForm.append('<p>'+obj['host']+':'+obj['path']+':'+obj['repo']+':'+obj['gitrepo']+'</p>');
+            })
+        }else{
+            console.log("Not have obj be checked!");
+        }
+    }
+    
+    $("#tonew").click(function(){
+        //console.log(checkboxSelect);
+        $("#newbackModalLabel").text('更新到最新版本');
+        showobj();
+    })
+    
+    $("#gobackup").click(function(){
+        $("#newbackModalLabel").text('回滚到上一版本');
+        showobj();
+    })
+    
+    </script>
+{% end %}

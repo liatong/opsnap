@@ -1,0 +1,22 @@
+{% extends base.html%}
+
+{% block title %}
+    web wechat 
+{% end %}
+
+{% block body %}
+    <button id="tologin">To Login</button><input  type="hidden" value="false">
+    <h2> Login user </h2>
+   <div id="user">
+     
+    
+   </div>
+   <input id="session" type="hidden" value={{session}}>
+   <div>
+    <div id="talking"></div>
+    <input id="content">
+    <button id="tosend">Send</button>
+   </div>
+   <script src="static/js/jquery.js"></script>
+   <script src="static/js/wechat.js"></script>
+{% end %}
